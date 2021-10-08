@@ -1,0 +1,104 @@
+html {
+    --header-height: 70px;
+    --header-margin-vertical: 18px;
+    --transition-duration-default: 350ms;
+    --padding-section-horizontal: 100px;
+    --color-accent: red;
+}
+
+body {
+    margin: 0;
+    height: 200vh;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    &.btn {
+        padding: 19px 36px;
+        border: 1px solid var(--color-accent);
+        font-size: 16px;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    margin: var(--header-margin-vertical) auto;
+    padding: 0 var(--padding-section-horizontal);
+    transition-duration: var(--transition-duration-default);
+
+    .logo-container {
+        width: 30%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+
+        a {
+            font-size: large;
+            padding: 11px 18px;
+            color: white;
+            transition-duration: var(--transition-duration-default);
+
+            &:last-child {
+                text-decoration: underline red;
+                text-underline-offset: 5px;
+
+                &::first-letter {
+                    color: red;
+                }
+            }
+        }
+    }
+
+    &.sticky {
+        background-color: rgba(255, 255, 255, 1);
+
+        a {
+            color: black;
+        }
+    }
+}
+
+section {
+    height: calc(100vh - var(--header-height));
+    border-bottom: 1px solid white;
+    padding: 0 var(--padding-section-horizontal);
+
+    &.first-section {
+        height: calc(100vh - var(--header-height) - 2*var(--header-margin-vertical));
+    }
+/*
+    &.last-section {
+        height: calc();
+    }
+*/
+}
+
+.first-section {
+    display: flex;
+    align-items: center;
+    .block-left {
+        width: 40%;
+        height: 70%;
+
+        p {
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+h1 {
+    font-size: 60px;
+}

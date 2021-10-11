@@ -8,6 +8,16 @@
   font-family: "Saonara 2";
   src: url("./Assets/Saonara 2.otf") format("opentype");
 }
+@font-face {
+  /* Visit URL: https://www.dafontfree.io/geliat-font/ */
+  font-family: "Geliat Extrabold";
+  src: url("./Assets/Geliat Extrabold.otf") format("opentype");
+}
+@font-face {
+  /* Visit URL: https://www.dafontfree.io/geliat-font/ */
+  font-family: "Geliat Extralight";
+  src: url("./Assets/Geliat Extralight.otf") format("opentype");
+}
 html {
   --header-height: 70px;
   --header-margin-vertical: 18px;

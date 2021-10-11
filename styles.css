@@ -40,6 +40,7 @@ a.btn {
   padding: 19px 36px;
   border: 1px solid var(--color-accent);
   font-size: 16px;
+  text-transform: uppercase;
 }
 
 header {
@@ -108,6 +109,9 @@ section {
   font-size: 20px;
   margin-bottom: 50px;
 }
+.opening-slider .block-left .btn {
+  margin-right: 20px;
+}
 
 .two-cards {
   display: flex;
@@ -152,9 +156,6 @@ section {
 .about-us span {
   color: var(--color-accent);
 }
-.about-us h2 {
-  font-size: 42px;
-}
 .about-us .two-columns {
   flex-basis: 48%;
 }
@@ -162,17 +163,36 @@ section {
   font-size: 20px;
 }
 
+.clients {
+  flex-direction: column;
+  justify-content: space-around;
+}
+.clients .client-logos {
+  width: 100%;
+  background-color: lightgray;
+  height: 10vh;
+}
+.clients .text-container {
+  width: 50%;
+  text-align: center;
+}
+
+/* Typography */
 h1, h2, h3, h4, h5, h6, .btn {
   font-family: "Saonara";
 }
 
-p, span {
+p, span, nav a {
   font-family: "Geliat Extralight";
   font-weight: bold;
 }
 
 h1 {
   font-size: 60px;
+}
+
+h2 {
+  font-size: 42px;
 }
 
 h4 {
@@ -186,6 +206,10 @@ h5 {
 
 p {
   font-size: 16px;
+}
+
+.subtitle {
+  color: var(--color-accent);
 }
 
 /*# sourceMappingURL=styles.css.map */

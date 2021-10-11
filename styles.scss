@@ -1,3 +1,15 @@
+@font-face {
+    /* Visit URL: https://www.dafont.com/made-saonara.font */
+    font-family: "Saonara";
+    src: url("./Assets/Saonara.otf") format("opentype");
+}
+
+@font-face {
+    /* Visit URL: https://www.dafont.com/made-saonara.font */
+    font-family: "Saonara 2";
+    src: url("./Assets/Saonara\ 2.otf") format("opentype");
+}
+
 html {
     --header-height: 70px;
     --header-margin-vertical: 18px;

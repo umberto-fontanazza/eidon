@@ -45,6 +45,18 @@ html {
         var(--animation-delay-default)
         var(--animation-direction-default)
         var(--animation-fill-mode-default)*/;
+
+
+    /* Scroller mechanism */
+    height: 100vh;
+    scroll-snap-type: y proximity;
+    section {
+        scroll-snap-align: start;
+        scroll-margin-top: var(--header-height);
+        &.opening-slider {
+            scroll-margin-top: calc(var(--header-height) + 2*var(--header-margin-vertical));
+        }
+    }
 }
 
 body {

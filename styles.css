@@ -39,6 +39,16 @@ html {
       var(--animation-delay-default)
       var(--animation-direction-default)
       var(--animation-fill-mode-default)*/
+  /* Scroller mechanism */
+  height: 100vh;
+  scroll-snap-type: y proximity;
+}
+html section {
+  scroll-snap-align: start;
+  scroll-margin-top: var(--header-height);
+}
+html section.opening-slider {
+  scroll-margin-top: calc(var(--header-height) + 2*var(--header-margin-vertical));
 }
 
 body {
@@ -114,7 +124,7 @@ section {
 }
 
 .opening-slider {
-  height: calc(100vh - var(--header-height) - 2 * var(--header-margin-vertical));
+  height: calc(100vh - var(--header-height) - 2*var(--header-margin-vertical));
   display: flex;
   align-items: center;
 }

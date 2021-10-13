@@ -86,9 +86,11 @@ a.btn {
 }
 
 header {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   background-color: var(--color-bright);
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
 }
 header .logo-container {
   width: 30%;
@@ -110,10 +112,9 @@ header a:last-child::first-letter {
 }
 @media screen and (min-width: 768px) {
   header {
-    display: flex;
-    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
-    height: var(--header-height);
     margin: var(--header-margin-vertical) auto;
     padding: 0 var(--padding-section-horizontal);
     transition-duration: var(--transition-duration-default);

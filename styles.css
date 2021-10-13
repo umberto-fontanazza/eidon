@@ -122,7 +122,6 @@ header.mobile-nav-active nav {
 header a {
   padding: 11px 18px;
   font-size: 30px;
-  margin-bottom: 20px;
   transition-duration: var(--transition-duration-default);
   color: var(--color-dark);
 }

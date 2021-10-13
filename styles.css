@@ -104,14 +104,25 @@ header {
   display: flex;
   justify-content: space-between;
 }
-header .logo-container {
-  width: 30%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+header.mobile-nav-active {
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+header.mobile-nav-active .logo-container {
+  flex: 1;
+}
+header.mobile-nav-active nav {
+  flex: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 header a {
-  font-size: large;
   padding: 11px 18px;
+  font-size: 30px;
+  margin-bottom: 20px;
   transition-duration: var(--transition-duration-default);
   color: var(--color-dark);
 }
@@ -138,12 +149,17 @@ header a:last-child::first-letter {
   }
   header a {
     color: var(--color-bright);
+    font-size: large;
   }
   header.sticky {
     background-color: var(--color-bright);
   }
   header.sticky a {
     color: var(--color-dark);
+  }
+  header .logo-container {
+    width: 30%;
+    height: 100%;
   }
 }
 

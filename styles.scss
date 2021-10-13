@@ -29,6 +29,7 @@ html {
     --padding-section-horizontal: 100px;
     --color-accent: red;
     --color-bright: white;
+    --color-dark: black;
 
     /* Animations */
     --animation-duration-default: 0.8s;
@@ -44,22 +45,39 @@ html {
         var(--animation-timing-function-default)
         var(--animation-delay-default)
         var(--animation-direction-default)
-        var(--animation-fill-mode-default)*/;
+        var(--animation-fill-mode-default)*/
+    ;
 
+    body>header,
+    section,
+    footer {
+        overflow-x: hidden;
+    }
 
     /* Scroller mechanism */
-    height: 100vh;
-    scroll-snap-type: y proximity;
-    section {
-        scroll-snap-align: start;
-        scroll-margin-top: var(--header-height);
-        &.opening-slider {
-            scroll-margin-top: calc(var(--header-height) + 2*var(--header-margin-vertical));
+    @media screen and (min-width: 768px) {
+        height: 100vh;
+        scroll-snap-type: y proximity;
+
+        section {
+            scroll-snap-align: start;
+            scroll-margin-top: var(--header-height);
+
+            &.opening-slider {
+                scroll-margin-top: calc(var(--header-height) + 2*var(--header-margin-vertical));
+            }
+
+            height: calc(100vh - var(--header-height));
+            border-bottom: 1px solid var(--color-bright);
+            padding: 0 var(--padding-section-horizontal);
+            display: flex;
+            align-items: center;
         }
     }
 }
 
 body {
+
     margin: 0;
     background-color: black;
     color: var(--color-bright);
@@ -80,15 +98,9 @@ a {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
-    height: var(--header-height);
-    margin: var(--header-margin-vertical) auto;
-    padding: 0 var(--padding-section-horizontal);
-    transition-duration: var(--transition-duration-default);
+    background-color: var(--color-bright);
 
     .logo-container {
         width: 30%;
@@ -96,54 +108,53 @@ header {
         background-color: rgba(0, 0, 0, 0.5);
     }
 
-    nav {
-        display: flex;
-        align-items: center;
+    a {
+        font-size: large;
+        padding: 11px 18px;
+        transition-duration: var(--transition-duration-default);
+        color: var(--color-dark);
 
-        a {
-            font-size: large;
-            padding: 11px 18px;
-            color: var(--color-bright);
-            transition-duration: var(--transition-duration-default);
+        &:last-child {
+            text-decoration: underline var(--color-accent);
+            text-underline-offset: 5px;
 
-            &:last-child {
-                text-decoration: underline var(--color-accent);
-                text-underline-offset: 5px;
-
-                &::first-letter {
-                    color: var(--color-accent);
-                }
+            &::first-letter {
+                color: var(--color-accent);
             }
         }
     }
 
-    &.sticky {
-        background-color: rgba(255, 255, 255, 1);
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        top: 0;
+        height: var(--header-height);
+        margin: var(--header-margin-vertical) auto;
+        padding: 0 var(--padding-section-horizontal);
+        transition-duration: var(--transition-duration-default);
+        background-color: transparent;
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
 
         a {
-            color: black;
+            color: var(--color-bright);
+        }
+
+        &.sticky {
+            background-color: var(--color-bright);
+            a {
+                color: var(--color-dark);
+            }
         }
     }
-}
 
-section {
-    height: calc(100vh - var(--header-height));
-    border-bottom: 1px solid var(--color-bright);
-    padding: 0 var(--padding-section-horizontal);
-    display: flex;
-    align-items: center;
-    /*
-    &.last-section {
-        height: calc();
-    }
-*/
+
 }
 
 .opening-slider {
-    height: calc(100vh - var(--header-height) - 2*var(--header-margin-vertical));
-    display: flex;
-    align-items: center;
-
     .block-left {
         width: 40%;
         height: 70%;
@@ -156,6 +167,12 @@ section {
         .btn {
             margin-right: 20px;
         }
+    }
+
+    @media screen and (min-width: 768px) {
+        height: calc(100vh - var(--header-height) - 2*var(--header-margin-vertical));
+        display: flex;
+        align-items: center;
     }
 }
 

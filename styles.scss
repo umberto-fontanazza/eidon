@@ -58,6 +58,7 @@ html {
     @media screen and (min-width: 768px) {
         height: 100vh;
         scroll-snap-type: y proximity;
+        scroll-behavior: smooth;
 
         section {
             scroll-snap-align: start;

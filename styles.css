@@ -51,6 +51,7 @@ html footer {
   html {
     height: 100vh;
     scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
   }
   html section {
     scroll-snap-align: start;
@@ -62,7 +63,7 @@ html footer {
     align-items: center;
   }
   html section.opening-slider {
-    scroll-margin-top: calc(var(--header-height) + 2 * var(--header-margin-vertical));
+    scroll-margin-top: calc(var(--header-height) + 2*var(--header-margin-vertical));
   }
 }
 
@@ -137,7 +138,7 @@ header a:last-child::first-letter {
 
 @media screen and (min-width: 768px) {
   .opening-slider {
-    height: calc(100vh - var(--header-height) - 2 * var(--header-margin-vertical));
+    height: calc(100vh - var(--header-height) - 2*var(--header-margin-vertical));
     display: flex;
     align-items: center;
   }

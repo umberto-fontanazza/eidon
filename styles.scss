@@ -27,7 +27,7 @@ html {
     --header-margin-vertical: 18px;
     --transition-duration-default: 350ms;
     --padding-section-horizontal: 100px;
-    --color-accent: red;
+    --color-accent: #ac3123;
     --color-bright: white;
     --color-dark: black;
 
@@ -96,6 +96,17 @@ a {
         text-transform: uppercase;
         margin: 10px 0;
     }
+}
+
+button {
+    padding: 19px 36px;
+    border: 1px solid var(--color-accent);
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    color: var(--color-bright);
+    background-color: transparent;
+    cursor: pointer;
 }
 
 header {
@@ -272,6 +283,31 @@ header {
     }
 }
 
+.contact-us {
+    .image-container {
+        background-color: yellow;
+    }
+
+    .email-form-container {
+        input[type=email] {
+            padding: 19px 36px;
+            background-color: transparent;
+            border: 1px solid var(--color-bright);
+            color: var(--color-bright);
+            font-size: 16px;
+            &::placeholder {
+                color: var(--color-bright);
+                transition-duration: var(--transition-duration-default);
+            }
+            &:focus {
+                &::placeholder {
+                    opacity: 0.2;
+                }
+            }
+        }
+    }
+}
+
 /* Typography */
 
 h1,
@@ -280,7 +316,8 @@ h3,
 h4,
 h5,
 h6,
-.btn {
+.btn,
+button {
     font-family: "Saonara";
 }
 

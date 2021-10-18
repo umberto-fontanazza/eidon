@@ -119,43 +119,35 @@ header {
     align-items: center;
 
     .logo-container {
-        height: 100%;
-        position: relative;
         display: flex;
         align-items: center;
+        height: var(--header-height);
         .logo {
             height: 70%;
-            position: absolute;
             &.bright {
                 display: none;
             }
         }
     }
 
+    #mobile-menu-icon {
+        color: var(--color-dark);
+    }
+
     nav {
         display: none;
     }
 
-    #mobile-menu-icon {
-        color: var(--color-dark);
-        padding: 10px;
-        margin: 10px;
-    }
-
-
     &.mobile-nav-active {
         height: 100vh;
-        width: 100%;
-        flex-direction: column;
-        .logo-container {
-            flex: 1;
-        }
+        flex-wrap: wrap;
         nav {
-            flex: 11;
+            width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            height: calc(100vh - var(--header-height));
         }
     }
 

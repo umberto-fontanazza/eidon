@@ -24,16 +24,7 @@
             <a href="#contact-us">Contattaci</a>
         </nav>
         <span class="material-icons" id="menu-icon">menu</span>
-        <script>
-            window.addEventListener('scroll',function(){
-                let breakpoint = document.querySelector("header").style.marginTop;
-                let className = "sticky";
-                if (window.scrollY > breakpoint)
-                    document.querySelector("header").classList.add(className);
-                else
-                    document.querySelector("header").classList.remove(className);
-            });
-        </script>
+        <script src="./header.js"></script>
     </header>
 
     <section class="opening-slider">

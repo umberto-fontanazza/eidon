@@ -124,6 +124,7 @@ header nav {
 }
 header #menu-icon {
   color: var(--color-dark);
+  font-size: 1.5em;
   padding: 10px;
   margin: 10px;
 }

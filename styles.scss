@@ -116,6 +116,17 @@ header {
     display: flex;
     justify-content: space-between;
 
+    .logo-container {
+        position: relative;
+        .logo {
+            height: 100%;
+            position: absolute;
+            &.bright {
+                display: none;
+            }
+        }
+    }
+
     &.mobile-nav-active {
         height: 100vh;
         width: 100%;
@@ -129,9 +140,6 @@ header {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            a {
-
-            }
         }
     }
 
@@ -172,8 +180,26 @@ header {
 
         &.sticky {
             background-color: var(--color-bright);
+
+            .logo-container {
+                .logo.bright {
+                    display: none;
+                }
+            }
+
             a {
                 color: var(--color-dark);
+            }
+        }
+
+        &:not(.sticky) {
+            .logo-container {
+                .logo.dark {
+                    display: none;
+                }
+                .logo.bright {
+                    display: block;
+                }
             }
         }
 
@@ -182,8 +208,6 @@ header {
             height: 100%;
         }
     }
-
-
 }
 
 .opening-slider {

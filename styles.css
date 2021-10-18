@@ -110,6 +110,7 @@ header .logo-container {
   display: flex;
   align-items: center;
   height: var(--header-height);
+  margin-left: 20px;
 }
 header .logo-container .logo {
   height: 70%;
@@ -119,6 +120,9 @@ header .logo-container .logo.bright {
 }
 header #mobile-menu-icon {
   color: var(--color-dark);
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 1.7em;
 }
 header nav {
   display: none;
@@ -184,6 +188,7 @@ header a:last-child::first-letter {
   }
   header .logo-container {
     width: 30%;
+    margin-left: 0;
   }
   header #mobile-menu-icon {
     display: none;

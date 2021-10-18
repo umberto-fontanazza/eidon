@@ -122,9 +122,8 @@ header .logo-container .logo.bright {
 header nav {
   display: none;
 }
-header #menu-icon {
+header #mobile-menu-icon {
   color: var(--color-dark);
-  font-size: 1.5em;
   padding: 10px;
   margin: 10px;
 }
@@ -193,7 +192,7 @@ header a:last-child::first-letter {
   header .logo-container {
     width: 30%;
   }
-  header #menu-icon {
+  header #mobile-menu-icon {
     display: none;
   }
 }

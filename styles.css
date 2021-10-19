@@ -191,7 +191,10 @@ header a:last-child::first-letter {
 
 section {
   padding: 0 var(--padding-section-horizontal);
-  overflow-x: hide;
+  overflow-x: hidden;
+}
+section:not(:last-of-type) {
+  margin-bottom: 5vh;
 }
 section:first-of-type {
   margin-top: var(--header-height);
@@ -199,6 +202,11 @@ section:first-of-type {
 @media screen and (min-width: 768px) {
   section:first-of-type {
     margin-top: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  section {
+    margin-bottom: 0;
   }
 }
 
@@ -229,74 +237,82 @@ section:first-of-type {
   margin-top: 20px;
 }
 
-.two-cards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.two-cards .text-container {
-  text-align: center;
-}
-.two-cards .two-columns {
-  flex-basis: 48%;
-  overflow: hidden;
-}
-.two-cards .image-container {
-  height: 340px;
-  width: 100%;
-  overflow: hidden;
-}
 .two-cards .image-container img {
   width: 100%;
 }
-
-.services-grid .grid {
-  flex-basis: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
-.services-grid .service-grid {
-  margin-bottom: 50px;
-}
-.services-grid .service-grid:not(:last-child) {
-  margin-right: 20px;
-}
-.services-grid i {
-  margin-bottom: 10px;
-}
-.services-grid p {
-  margin-bottom: 30px;
-}
-.services-grid a {
-  margin-bottom: 30px;
+@media screen and (min-width: 768px) {
+  .two-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  .two-cards .text-container {
+    text-align: center;
+  }
+  .two-cards .two-columns {
+    flex-basis: 48%;
+  }
+  .two-cards .image-container {
+    height: 340px;
+    width: 100%;
+  }
 }
 
-.about-us {
-  display: flex;
-  justify-content: space-between;
-}
-.about-us span {
-  color: var(--color-accent);
-}
-.about-us .two-columns {
-  flex-basis: 48%;
-}
-.about-us p {
-  font-size: 20px;
+@media screen and (min-width: 768px) {
+  .services-grid .grid {
+    flex-basis: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+  .services-grid .service-grid {
+    margin-bottom: 50px;
+  }
+  .services-grid .service-grid:not(:last-child) {
+    margin-right: 20px;
+  }
+  .services-grid i {
+    margin-bottom: 10px;
+  }
+  .services-grid p {
+    margin-bottom: 30px;
+  }
+  .services-grid a {
+    margin-bottom: 30px;
+  }
 }
 
-.clients {
-  flex-direction: column;
-  justify-content: space-around;
-}
-.clients .client-logos {
+.about-us .image-container img {
   width: 100%;
-  background-color: lightgray;
-  height: 10vh;
 }
-.clients .text-container {
-  width: 50%;
-  text-align: center;
+@media screen and (min-width: 768px) {
+  .about-us {
+    display: flex;
+    justify-content: space-between;
+  }
+  .about-us span {
+    color: var(--color-accent);
+  }
+  .about-us .two-columns {
+    flex-basis: 48%;
+  }
+  .about-us p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .clients {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .clients .client-logos {
+    width: 100%;
+    background-color: lightgray;
+    height: 10vh;
+  }
+  .clients .text-container {
+    width: 50%;
+    text-align: center;
+  }
 }
 
 .contact-us .image-container {

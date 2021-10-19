@@ -224,7 +224,11 @@ header {
 
 section {
     padding: 0 var(--padding-section-horizontal);
-    overflow-x: hide;
+    overflow-x: hidden;
+
+    &:not(:last-of-type) {
+        margin-bottom: 5vh;
+    }
 
     &:first-of-type {
         margin-top: var(--header-height);
@@ -232,6 +236,10 @@ section {
         @media screen and (min-width: 768px) {
             margin-top: 0;
         }
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 0;
     }
 }
 
@@ -267,88 +275,106 @@ section {
 }
 
 .two-cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 
-    .text-container {
-        text-align: center;
-    }
-
-    .two-columns {
-        flex-basis: 48%;
-        overflow: hidden;
-    }
 
     .image-container {
-        height: 340px;
-        width: 100%;
-        overflow: hidden;
-
         img {
+            width: 100%;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+
+        .text-container {
+            text-align: center;
+        }
+
+        .two-columns {
+            flex-basis: 48%;
+        }
+
+        .image-container {
+            height: 340px;
             width: 100%;
         }
     }
 }
 
 .services-grid {
-    .grid {
-        flex-basis: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    }
 
-    .service-grid {
-        margin-bottom: 50px;
-
-        &:not(:last-child) {
-            margin-right: 20px;
+    @media screen and (min-width: 768px) {
+        .grid {
+            flex-basis: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         }
-    }
 
-    i {
-        margin-bottom: 10px;
-    }
+        .service-grid {
+            margin-bottom: 50px;
 
-    p {
-        margin-bottom: 30px;
-    }
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
 
-    a {
-        margin-bottom: 30px;
+        i {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        a {
+            margin-bottom: 30px;
+        }
     }
 }
 
 .about-us {
-    display: flex;
-    justify-content: space-between;
 
-    span {
-        color: var(--color-accent);
+    .image-container {
+        img {
+            width: 100%;
+        }
     }
 
-    .two-columns {
-        flex-basis: 48%;
-    }
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
 
-    p {
-        font-size: 20px;
+        span {
+            color: var(--color-accent);
+        }
+
+        .two-columns {
+            flex-basis: 48%;
+        }
+
+        p {
+            font-size: 20px;
+        }
     }
 }
 
 .clients {
-    flex-direction: column;
-    justify-content: space-around;
 
-    .client-logos {
-        width: 100%;
-        background-color: lightgray;
-        height: 10vh;
-    }
+    @media screen and (min-width: 768px) {
+        flex-direction: column;
+        justify-content: space-around;
 
-    .text-container {
-        width: 50%;
-        text-align: center;
+        .client-logos {
+            width: 100%;
+            background-color: lightgray;
+            height: 10vh;
+        }
+
+        .text-container {
+            width: 50%;
+            text-align: center;
+        }
     }
 }
 

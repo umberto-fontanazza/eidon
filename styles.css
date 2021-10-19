@@ -90,6 +90,15 @@ button {
   cursor: pointer;
 }
 
+.image-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.image-container img {
+  width: 100%;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -237,13 +246,11 @@ section:first-of-type {
   margin-top: 20px;
 }
 
-.two-cards .image-container img {
-  width: 100%;
-}
 @media screen and (min-width: 768px) {
   .two-cards {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
   }
   .two-cards .text-container {
     text-align: center;
@@ -280,9 +287,6 @@ section:first-of-type {
   }
 }
 
-.about-us .image-container img {
-  width: 100%;
-}
 @media screen and (min-width: 768px) {
   .about-us {
     display: flex;
@@ -315,9 +319,6 @@ section:first-of-type {
   }
 }
 
-.contact-us .image-container {
-  background-color: yellow;
-}
 .contact-us .email-form-container input[type=email] {
   padding: 19px 36px;
   background-color: transparent;

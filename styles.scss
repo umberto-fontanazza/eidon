@@ -99,6 +99,15 @@ button {
     cursor: pointer;
 }
 
+.image-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    img {
+        width: 100%;
+    }
+}
+
 header {
     position: fixed;
     top: 0;
@@ -276,16 +285,10 @@ section {
 
 .two-cards {
 
-
-    .image-container {
-        img {
-            width: 100%;
-        }
-    }
-
     @media screen and (min-width: 768px) {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
 
         .text-container {
             text-align: center;
@@ -335,12 +338,6 @@ section {
 
 .about-us {
 
-    .image-container {
-        img {
-            width: 100%;
-        }
-    }
-
     @media screen and (min-width: 768px) {
         display: flex;
         justify-content: space-between;
@@ -379,9 +376,6 @@ section {
 }
 
 .contact-us {
-    .image-container {
-        background-color: yellow;
-    }
 
     .email-form-container {
         input[type=email] {

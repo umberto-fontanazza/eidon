@@ -392,8 +392,26 @@ nav a {
 
 footer {
   background-color: var(--color-bright);
+  color: var(--color-dark);
   width: 100%;
-  min-height: 20vh;
+  padding: 30px 0;
+}
+footer .logo-container {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+}
+footer .logo-container img {
+  height: 100%;
+}
+footer .footer-menu-container {
+  flex-basis: 100%;
+  text-align: center;
+}
+footer .footer-menu-container nav a {
+  display: block;
+  color: var(--color-dark);
 }
 
 /* Keyframes */

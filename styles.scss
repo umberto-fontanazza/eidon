@@ -465,8 +465,11 @@ footer {
     width: 100%;
     padding: 30px 0;
 
-    .logo-container {
+    .high-footer div {
         width: 100%;
+    }
+
+    .logo-container {
         height: 5vh;
         display: flex;
         justify-content: center;
@@ -476,12 +479,17 @@ footer {
     }
 
     .footer-menu-container {
-        flex-basis: 100%;
         text-align: center;
 
         nav a {
             display: block;
             color: var(--color-dark);
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        div {
+            width: auto;
         }
     }
 }

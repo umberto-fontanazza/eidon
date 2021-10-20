@@ -396,8 +396,10 @@ footer {
   width: 100%;
   padding: 30px 0;
 }
-footer .logo-container {
+footer .high-footer div {
   width: 100%;
+}
+footer .logo-container {
   height: 5vh;
   display: flex;
   justify-content: center;
@@ -406,12 +408,16 @@ footer .logo-container img {
   height: 100%;
 }
 footer .footer-menu-container {
-  flex-basis: 100%;
   text-align: center;
 }
 footer .footer-menu-container nav a {
   display: block;
   color: var(--color-dark);
+}
+@media screen and (min-width: 768px) {
+  footer div {
+    width: auto;
+  }
 }
 
 /* Keyframes */

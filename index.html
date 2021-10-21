@@ -4,8 +4,6 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="contact-form.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -161,13 +159,14 @@
             <h3>Lorem ipsum dolor sit.</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, inventore praesentium. Dicta obcaecati
                 veniam neque reprehenderit doloribus. Quia!</p>
-            <form action="https://formspree.io/f/xoqyzlog" method="POST" enctype=”multipart/form-data”>
+            <form id="contact-form" action="https://formspree.io/f/xoqyzlog" method="POST" enctype=”multipart/form-data”>
                 <label>Nome<input type="text" name="Name" placeholder="Elon" required maxlength="64"></label>
                 <label>Cognome<input type="text" name="Surname" placeholder="Musk" required maxlength="64"></label>
                 <label>E-mail<input type="email" name="Email" id="email" placeholder="elon.musk@tesla.inc" maxlength="256" required></label>
                 <label>Sito<input type="text" name="Website" id="" placeholder="www.tesla.com" maxlength="256"></label>
                 <label>Messaggio<textarea name="message" id="" cols="30" rows="10" placeholder="Aiutateci a far conoscere la nostra nuova linea di veicoli elettrici" required maxlength="512"></textarea></label>
                 <button type="submit">Invia</button>
+                <script src="contact-form.js"></script>
             </form>
         </div>
     </section>
@@ -180,7 +179,7 @@
             <div class="footer-menu-container">
                 <h6>Lorem, ipsum dolor.</h6>
                 <nav>
-                    <a href="">Lorem.</a>
+                    <a href="./confirmation.html">Lorem.
                     <a href="">Lorem.</a>
                     <a href="">Lorem.</a>
                 </nav>

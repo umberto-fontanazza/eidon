@@ -44,7 +44,7 @@ html {
     --animation-fade-in-up: fade-in-up var(--animation-duration-default) ease-in var(--animation-delay-default) var(--animation-fill-mode-default);
 
     @media screen and (min-width: 768px) {
-        --padding-section-horizontal: 150px;
+        --padding-section-horizontal: 12.5vw;
     }
 
     /* Scroller mechanism */
@@ -318,7 +318,7 @@ section {
         .grid {
             flex-basis: 100%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
         }
 
         .service-grid {

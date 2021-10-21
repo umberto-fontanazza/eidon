@@ -40,7 +40,7 @@ html {
 }
 @media screen and (min-width: 768px) {
   html {
-    --padding-section-horizontal: 150px;
+    --padding-section-horizontal: 12.5vw;
   }
 }
 @media screen and (min-width: 768px) {
@@ -274,7 +274,7 @@ section:first-of-type {
   .services-grid .grid {
     flex-basis: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
   }
   .services-grid .service-grid {
     margin-bottom: 50px;

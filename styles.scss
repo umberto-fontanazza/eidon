@@ -400,11 +400,13 @@ section {
                     background-color: transparent;
                     border: 1px solid var(--color-bright);
                     color: var(--color-bright);
+                    caret-color: var(--color-accent);
                     font-size: 16px;
                     display: block;
                     width: calc(100% - 36px*2 - 2px);
                     margin-bottom: 15px;
                     margin-top: 5px;
+                    transition: var(--transition-duration-default) ease;
 
                     &::placeholder {
                         color: var(--color-bright);
@@ -416,6 +418,11 @@ section {
                         &::placeholder {
                             opacity: 0.2;
                         }
+                    }
+
+                    &:focus {
+                        outline: none;
+                        border-color: var(--color-accent);
                     }
                 }
             }

@@ -44,7 +44,7 @@ html {
     --animation-fade-in-up: fade-in-up var(--animation-duration-default) ease-in var(--animation-delay-default) var(--animation-fill-mode-default);
 
     @media screen and (min-width: 768px) {
-        --padding-section-horizontal: 100px;
+        --padding-section-horizontal: 150px;
     }
 
     /* Scroller mechanism */
@@ -465,10 +465,6 @@ footer {
     width: 100%;
     padding: 30px 0;
 
-    .high-footer div {
-        width: 100%;
-    }
-
     .logo-container {
         height: 5vh;
         display: flex;
@@ -488,8 +484,18 @@ footer {
     }
 
     @media screen and (min-width: 768px) {
-        div {
-            width: auto;
+        .high-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .high-footer, .low-footer {
+            &>div:first-child {
+                margin-left: var(--padding-section-horizontal)
+            }
+            &>div:last-child {
+                margin-right: var(--padding-section-horizontal);
+            }
         }
     }
 }

@@ -40,7 +40,7 @@ html {
 }
 @media screen and (min-width: 768px) {
   html {
-    --padding-section-horizontal: 100px;
+    --padding-section-horizontal: 150px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -396,9 +396,6 @@ footer {
   width: 100%;
   padding: 30px 0;
 }
-footer .high-footer div {
-  width: 100%;
-}
 footer .logo-container {
   height: 5vh;
   display: flex;
@@ -415,8 +412,15 @@ footer .footer-menu-container nav a {
   color: var(--color-dark);
 }
 @media screen and (min-width: 768px) {
-  footer div {
-    width: auto;
+  footer .high-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .high-footer > div:first-child, footer .low-footer > div:first-child {
+    margin-left: var(--padding-section-horizontal);
+  }
+  footer .high-footer > div:last-child, footer .low-footer > div:last-child {
+    margin-right: var(--padding-section-horizontal);
   }
 }
 

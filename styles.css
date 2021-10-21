@@ -354,16 +354,22 @@ section:first-of-type {
   opacity: 0.2;
 }
 @media screen and (min-width: 768px) {
-  .contact-us :first-child {
+  .contact-us .name,
+.contact-us .email {
     margin-right: 10px;
   }
-  .contact-us .form-container form label {
-    width: 50%;
+  .contact-us .form-container {
+    margin-left: 10px;
   }
-  .contact-us .form-container form label input[name=Name],
-.contact-us .form-container form label input[name=Surname] {
-    display: inline-block;
-    width: auto;
+  .contact-us .form-container form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contact-us .form-container form label {
+    flex-basis: 100%;
+  }
+  .contact-us .form-container form label.name, .contact-us .form-container form label.surname, .contact-us .form-container form label.email, .contact-us .form-container form label.website {
+    flex-basis: calc(50% - 10px /2);
   }
 }
 

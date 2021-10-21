@@ -155,12 +155,19 @@
         <div class="image-container">
             <img src="https://assets.website-files.com/5ecd9451bb878d945db7ef83/5ed9784bb17cb43d3edf67f5_request_mail.jpg" alt="" loading="lazy">
         </div>
-        <div class="email-form-container">
+        <div class="form-container">
             <h3>Lorem ipsum dolor sit.</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, inventore praesentium. Dicta obcaecati
                 veniam neque reprehenderit doloribus. Quia!</p>
-            <form action="mailto:team@greggoya.it" method="POST" enctype=”multipart/form-data”>
-                <input type="email" name="Email" id="email" placeholder="Indirizzo email..." maxlength="256">
+            <form action="https://formspree.io/f/xoqyzlog" method="POST" enctype=”multipart/form-data”>
+                <label>Nome<input type="text" name="Name" placeholder="Elon"></label>
+                <label>Cognome<input type="text" name="Surname" placeholder="Musk"></label>
+                <label>E-mail<input type="email" name="Email" id="email" placeholder="elon.musk@tesla.inc" maxlength="256"></label>
+                <label>Sito<input type="text" name="Website" id="" placeholder="www.tesla.com"></label>
+                <label>Messaggio<textarea name="" id="" cols="30" rows="10" placeholder="Aiutateci a far conoscere la nostra nuova linea di veicoli elettrici"></textarea></label>
+                <input type="hidden" name="_next" value="www.google.it">
+                <input type="hidden" name="_subject" >
+                <input type="hidden" name="_cc">
                 <button type="submit">Invia</button>
             </form>
         </div>

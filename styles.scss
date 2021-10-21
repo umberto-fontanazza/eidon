@@ -391,8 +391,11 @@ section {
     .form-container {
         form {
             margin-bottom: 20px;
+
             label {
-                input, textarea {
+
+                input,
+                textarea {
                     padding: 19px 36px;
                     background-color: transparent;
                     border: 1px solid var(--color-bright);
@@ -400,7 +403,8 @@ section {
                     font-size: 16px;
                     display: block;
                     width: calc(100% - 36px*2 - 2px);
-                    margin-bottom: 10px;
+                    margin-bottom: 15px;
+                    margin-top: 5px;
 
                     &::placeholder {
                         color: var(--color-bright);
@@ -417,6 +421,22 @@ section {
             }
         }
     }
+
+    @media screen and (min-width: 768px) {
+        :first-child {
+            margin-right: 10px;
+        }
+        .form-container form {
+            label {
+                width: 50%;
+                input[name="Name"],
+                input[name="Surname"] {
+                    display: inline-block;
+                    width: auto;
+                }
+            }
+        }
+    }
 }
 
 /* Typography */
@@ -428,13 +448,16 @@ h4,
 h5,
 h6,
 .btn,
-button {
+button,
+label {
     font-family: "Saonara";
 }
 
 p,
 span,
-nav a {
+nav a,
+textarea,
+input {
     font-family: "Geliat Extralight";
     font-weight: bold;
 }

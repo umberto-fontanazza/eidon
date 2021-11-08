@@ -322,7 +322,7 @@ section:first-of-type {
   display: flex;
   flex-basis: 23%;
   height: 75px;
-  border: 1px solid white;
+  border: 1px solid var(--color-bright);
   justify-content: center;
   align-items: center;
 }

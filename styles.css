@@ -312,6 +312,26 @@ section:first-of-type {
   }
 }
 
+.clients .client-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 10px;
+}
+.clients .client-logos .client-link {
+  display: flex;
+  flex-basis: 23%;
+  height: 75px;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+}
+.clients .client-logos .client-link img {
+  height: 80%;
+}
+.clients .client-logos .client-link:not(:last-of-type) {
+  margin-right: 10px;
+}
 @media screen and (min-width: 768px) {
   .clients {
     flex-direction: column;
@@ -319,7 +339,6 @@ section:first-of-type {
   }
   .clients .client-logos {
     width: 100%;
-    background-color: lightgray;
     height: 10vh;
   }
   .clients .text-container {

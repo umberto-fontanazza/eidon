@@ -325,12 +325,17 @@ section:first-of-type {
   border: 1px solid var(--color-bright);
   justify-content: center;
   align-items: center;
+  transition: var(--transition-duration-default) ease;
 }
 .clients .client-logos .client-link img {
   height: 80%;
 }
 .clients .client-logos .client-link:not(:last-of-type) {
   margin-right: 10px;
+}
+.clients .client-logos .client-link:hover {
+  transform: scale(1.02);
+  border-color: var(--color-accent);
 }
 @media screen and (min-width: 768px) {
   .clients {

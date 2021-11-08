@@ -480,38 +480,45 @@ input {
     font-weight: bold;
 }
 
+/*Typography*/
+
+html {font-size: 100%;}
+
+h1 {font-size: 3.052rem;}
+
+h2 {font-size: 2.441rem;}
+
+h3 {font-size: 1.953rem;}
+
+h4 {font-size: 1.563rem;}
+
+h5 {font-size: 1.25rem;}
+
+small, .text_small {font-size: 0.8rem;}
+
+
 @media only screen and (min-width: 768px) {
 
-    h1 {
-        font-size: 60px;
-    }
+    h1 {font-size: 60px;}
 
-    h2 {
-        font-size: 42px;
-    }
+    h2 {font-size: 42px;}
 
-    h3 {
-        font-size: 36px;
-    }
+    h3 {font-size: 36px;}
 
-    h4 {
-        font-size: 30px;
-    }
+    h4 {font-size: 30px;}
 
     h5 {
         font-size: 24px;
         margin: 22px auto 15px auto;
     }
 
-    p {
-        font-size: 16px;
-    }
+    p {font-size: 16px;}
 }
 
 .subtitle {
-    display: inline-block;
     color: var(--color-accent);
 }
+/*End typography*/
 
 footer {
     background-color: var(--color-bright);

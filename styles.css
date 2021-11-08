@@ -26,6 +26,7 @@ html {
   --color-accent: #ac3123;
   --color-bright: white;
   --color-dark: black;
+  --transform-scale-default: scale(1.02);
   /* Animations */
   --animation-duration-default: 1.2s;
   --animation-timing-function-default: ease-out;
@@ -334,7 +335,7 @@ section:first-of-type {
   margin-right: 10px;
 }
 .clients .client-logos .client-link:hover {
-  transform: scale(1.02);
+  transform: var(--transform-scale-default);
   border-color: var(--color-accent);
 }
 @media screen and (min-width: 768px) {

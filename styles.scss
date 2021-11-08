@@ -30,6 +30,7 @@ html {
     --color-accent: #ac3123;
     --color-bright: white;
     --color-dark: black;
+    --transform-scale-default: scale(1.02);
 
     /* Animations */
     --animation-duration-default: 1.2s;
@@ -390,7 +391,7 @@ section {
             }
 
             &:hover {
-                transform: scale(1.02);
+                transform: var(--transform-scale-default);
                 border-color: var(--color-accent);
             }
         }

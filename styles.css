@@ -51,12 +51,14 @@ html {
     scroll-behavior: smooth;
   }
   html section {
-    scroll-snap-align: start;
-    scroll-margin-top: var(--header-height);
     height: calc(100vh - var(--header-height));
     border-bottom: 1px solid var(--color-bright);
     display: flex;
     align-items: center;
+  }
+  html section:not(:last-of-type) {
+    scroll-snap-align: start;
+    scroll-margin-top: var(--header-height);
   }
   html section.opening-slider {
     scroll-margin-top: calc(var(--header-height) + 2 * var(--header-margin-vertical));

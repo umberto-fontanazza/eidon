@@ -44,6 +44,8 @@ html {
     --animation-fade-in-up-transform-offset: 10vh;
     --animation-fade-in-up: fade-in-up var(--animation-duration-default) ease-in var(--animation-delay-default) var(--animation-fill-mode-default);
 
+    scroll-behavior: smooth;
+
     @media screen and (min-width: 768px) {
         --padding-section-horizontal: 12.5vw;
     }
@@ -52,13 +54,12 @@ html {
     @media screen and (min-width: 768px) {
         height: 100vh;
         scroll-snap-type: y proximity;
-        scroll-behavior: smooth;
 
         section {
             scroll-snap-align: start;
             scroll-margin-top: var(--header-height);
 
-            &.opening-slider {
+            &:first-of-type {
                 scroll-margin-top: calc(var(--header-height) + 2*var(--header-margin-vertical));
             }
 

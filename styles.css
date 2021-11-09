@@ -37,6 +37,7 @@ html {
   /* Animation fade in up */
   --animation-fade-in-up-transform-offset: 10vh;
   --animation-fade-in-up: fade-in-up var(--animation-duration-default) ease-in var(--animation-delay-default) var(--animation-fill-mode-default);
+  scroll-behavior: smooth;
   /* Scroller mechanism */
 }
 @media screen and (min-width: 768px) {
@@ -48,7 +49,6 @@ html {
   html {
     height: 100vh;
     scroll-snap-type: y proximity;
-    scroll-behavior: smooth;
   }
   html section {
     scroll-snap-align: start;
@@ -58,7 +58,7 @@ html {
     display: flex;
     align-items: center;
   }
-  html section.opening-slider {
+  html section:first-of-type {
     scroll-margin-top: calc(var(--header-height) + 2 * var(--header-margin-vertical));
   }
 }

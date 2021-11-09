@@ -527,6 +527,8 @@ h4 {font-size: 1.563rem;}
 
 h5 {font-size: 1.25rem;}
 
+h6 {font-size: 1rem;}
+
 small, .text_small {font-size: 0.8rem;}
 
 
@@ -572,9 +574,23 @@ footer {
     .footer-menu-container {
         text-align: center;
 
+        h6 {
+            margin-bottom: 10px;
+        }
+
         nav a {
             display: block;
             color: var(--color-dark);
+        }
+    }
+
+    .low-footer {
+        margin-top: 3rem;
+
+        .low-footer-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 
@@ -584,6 +600,15 @@ footer {
         .high-footer {
             display: flex;
             justify-content: space-between;
+
+            .footer-menu-container {
+                text-align: left;
+
+                h6 {
+                    margin-top: 1em;
+                    margin-bottom: 1em;
+                }
+            }
         }
 
         .high-footer,
@@ -594,6 +619,16 @@ footer {
 
             &>div:last-child {
                 margin-right: var(--padding-section-horizontal);
+            }
+        }
+
+        .low-footer {
+            .low-footer-inner {
+                flex-direction: row;
+
+                .social-container {
+                    display: inline-block;
+                }
             }
         }
     }
@@ -623,7 +658,7 @@ h6,
 p,
 a.btn,
 span.subtitle {
-    
+
         animation: var(--animation-fade-in-up);
-    
+
 }

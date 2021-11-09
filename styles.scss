@@ -662,3 +662,23 @@ span.subtitle {
         animation: var(--animation-fade-in-up);
 
 }
+
+.under-construction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+        &::first-letter {
+            color: var(--color-accent);
+        }
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+    }
+
+    p {
+        margin-top: 0;
+        max-width: 800px;
+    }
+}

@@ -581,4 +581,22 @@ span.subtitle {
   animation: var(--animation-fade-in-up);
 }
 
+.under-construction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.under-construction h1 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+.under-construction h1::first-letter {
+  color: var(--color-accent);
+}
+.under-construction p {
+  margin-top: 0;
+  max-width: 800px;
+}
+
 /*# sourceMappingURL=styles.css.map */

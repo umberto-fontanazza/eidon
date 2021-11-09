@@ -208,9 +208,6 @@ section {
   padding: 0 var(--padding-section-horizontal);
   overflow-x: hidden;
 }
-section:not(:last-of-type) {
-  margin-bottom: 5vh;
-}
 section:first-of-type {
   margin-top: var(--header-height);
 }

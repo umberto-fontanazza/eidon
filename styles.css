@@ -207,11 +207,11 @@ section {
   overflow-x: hidden;
 }
 section:first-of-type {
-  margin-top: var(--header-height);
+  padding-top: var(--header-height);
 }
 @media screen and (min-width: 768px) {
   section:first-of-type {
-    margin-top: 0;
+    padding-top: 0;
   }
 }
 @media screen and (min-width: 768px) {

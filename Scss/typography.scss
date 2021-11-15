@@ -1,0 +1,83 @@
+@font-face {
+    /* Visit URL: https://www.dafont.com/made-saonara.font */
+    font-family: "Saonara";
+    src: url("./Assets/Saonara.otf") format("opentype");
+}
+
+@font-face {
+    /* Visit URL: https://www.dafont.com/made-saonara.font */
+    font-family: "Saonara 2";
+    src: url("./Assets/Saonara\ 2.otf") format("opentype");
+}
+
+@font-face {
+    /* Visit URL: https://www.dafontfree.io/geliat-font/ */
+    font-family: "Geliat Extrabold";
+    src: url("./Assets/Geliat\ Extrabold.otf") format("opentype");
+}
+
+@font-face {
+    /* Visit URL: https://www.dafontfree.io/geliat-font/ */
+    font-family: "Geliat Extralight";
+    src: url("./Assets/Geliat\ Extralight.otf") format("opentype");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+button,
+label {
+    font-family: "Saonara";
+}
+
+p,
+span,
+nav a,
+textarea,
+input {
+    font-family: "Geliat Extralight";
+    font-weight: bold;
+}
+
+html {font-size: 100%;}
+
+h1 {font-size: 3.052rem;}
+
+h2 {font-size: 2.441rem;}
+
+h3 {font-size: 1.953rem;}
+
+h4 {font-size: 1.563rem;}
+
+h5 {font-size: 1.25rem;}
+
+h6 {font-size: 1rem;}
+
+small, .text_small {font-size: 0.8rem;}
+
+
+@media only screen and (min-width: 768px) {
+
+    h1 {font-size: 60px;}
+
+    h2 {font-size: 42px;}
+
+    h3 {font-size: 36px;}
+
+    h4 {font-size: 30px;}
+
+    h5 {
+        font-size: 24px;
+        margin: 22px auto 15px auto;
+    }
+
+    p {font-size: 16px;}
+}
+
+.subtitle {
+    color: var(--color-accent);
+}

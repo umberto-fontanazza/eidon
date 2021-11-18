@@ -1,6 +1,9 @@
 var form = document.getElementById("contact-form");
 
-async function handleSubmit(event) {
+
+async function handleSubmit(event: any) {
+    if(form == null)
+        return;
   event.preventDefault();
   var data = new FormData(event.target);
   fetch(event.target.action, {
@@ -11,11 +14,12 @@ async function handleSubmit(event) {
     }
   }).then(response => {
       console.log("Form submitted successfully");
-      window.location = "./confirmation.html";
+      window.location.href = "./confirmation.html";
     form.reset()
   }).catch(error => {
       console.log("Oops! There was a problem submitting your form");
   });
 }
 
-form.addEventListener("submit", handleSubmit);
+if(form != null)
+    form.addEventListener("submit", handleSubmit);

@@ -160,3 +160,7 @@ span.subtitle {
         max-width: 800px;
     }
 }
+
+.greyscale {
+    filter: grayscale(100%);
+}

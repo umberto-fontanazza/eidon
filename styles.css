@@ -161,6 +161,18 @@ footer .low-footer > div:last-child {
   }
 }
 
+.opening-slider::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("../Images/greg-goya-mountain.jpeg");
+  background-size: cover;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  filter: grayscale(100%) brightness(20%);
+}
 .opening-slider a.btn:nth-of-type(2) {
   border-color: var(--color-bright);
 }
@@ -173,6 +185,7 @@ footer .low-footer > div:last-child {
   .opening-slider .block-left {
     width: 50%;
     height: 70%;
+    z-index: 3;
   }
   .opening-slider .block-left h1 {
     margin-top: 0;
@@ -331,6 +344,9 @@ footer .low-footer > div:last-child {
   .contact-us .name,
 .contact-us .email {
     margin-right: 10px;
+  }
+  .contact-us .image-container {
+    max-width: 45%;
   }
   .contact-us .form-container {
     margin-left: 35px;
@@ -596,6 +612,10 @@ span.subtitle {
 .under-construction p {
   margin-top: 0;
   max-width: 800px;
+}
+
+.greyscale {
+  filter: grayscale(100%);
 }
 
 /*# sourceMappingURL=styles.css.map */

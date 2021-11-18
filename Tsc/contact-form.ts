@@ -15,7 +15,8 @@ async function handleSubmit(event: any) {
   }).then(response => {
       console.log("Form submitted successfully");
       window.location.href = "./confirmation.html";
-    form.reset()
+    if(form != null)
+        form.reset()
   }).catch(error => {
       console.log("Oops! There was a problem submitting your form");
   });

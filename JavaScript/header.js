@@ -3,26 +3,46 @@ var mobileMenuIcon = document.querySelector("#mobile-menu-icon");
 var mainHeader = document.querySelector("#main-nav-header");
 var navLinks = document.querySelectorAll("#main-nav-header nav a");
 window.addEventListener('scroll', function () {
-    var breakpoint = document.querySelector("header").style.marginTop;
+    var header = document.querySelector("header");
+    if (header == null)
+        return;
+    var breakpoint = +header.style.marginTop;
     var className = "sticky";
     if (window.scrollY > breakpoint)
-        document.querySelector("header").classList.add(className);
+        header.classList.add(className);
     else
-        document.querySelector("header").classList.remove(className);
+        header.classList.remove(className);
 });
+/**
+ * On mobile devices this function opens
+ * a full screen menu by adding a css class
+ */
 function mobileMenuToggle() {
+    if (mainHeader == null)
+        return;
     mainHeader.classList.toggle("mobile-nav-active");
     toggleBodyScroll();
 }
 function mobileMenuClose() {
+    if (mainHeader == null)
+        return;
     mainHeader.classList.remove("mobile-nav-active");
     toggleBodyScroll();
 }
-mobileMenuIcon.addEventListener("click", mobileMenuToggle);
+if (mobileMenuIcon != null)
+    mobileMenuIcon.addEventListener("click", mobileMenuToggle);
 navLinks.forEach(function (elem) { return elem.addEventListener("click", mobileMenuClose); });
+/**
+ * If the header contains the class
+ * "mobile-nav-active"
+ * locks the vertical scroll.
+ */
 function toggleBodyScroll() {
-    if (mainHeader.classList.contains("mobile-nav-active"))
-        document.querySelector("body").style.overflow = "hidden";
+    var body = document.querySelector("body");
+    if (body == null)
+        return;
+    if (mainHeader != null && mainHeader.classList.contains("mobile-nav-active"))
+        body.style.overflow = "hidden";
     else
-        document.querySelector("body").style.overflow = "auto";
+        body.style.overflow = "auto";
 }

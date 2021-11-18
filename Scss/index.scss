@@ -9,7 +9,7 @@
         align-items: center;
 
         .block-left {
-            width: 40%;
+            width: 50%;
             height: 70%;
 
             h1 {
@@ -58,12 +58,14 @@
                 height: 340px;
                 width: 100%;
             }
+
+            p {
+                text-align: center;
+            }
         }
     }
 
-    p {
-        text-align: center;
-    }
+
 }
 
 .services-grid {
@@ -214,7 +216,7 @@
         }
 
         .form-container {
-            margin-left: 10px;
+            margin-left: 35px;
             form {
                 display: flex;
                 flex-wrap: wrap;

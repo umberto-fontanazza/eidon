@@ -171,7 +171,7 @@ footer .low-footer > div:last-child {
     align-items: center;
   }
   .opening-slider .block-left {
-    width: 40%;
+    width: 50%;
     height: 70%;
   }
   .opening-slider .block-left h1 {
@@ -213,9 +213,9 @@ footer .low-footer > div:last-child {
     height: 340px;
     width: 100%;
   }
-}
-.two-cards p {
-  text-align: center;
+  .two-cards .container p {
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -335,7 +335,7 @@ footer .low-footer > div:last-child {
     margin-right: 10px;
   }
   .contact-us .form-container {
-    margin-left: 10px;
+    margin-left: 35px;
   }
   .contact-us .form-container form {
     display: flex;
@@ -403,6 +403,7 @@ h1 {
 
 h2 {
   font-size: 2.441rem;
+  margin-top: 5px;
 }
 
 h3 {
@@ -460,7 +461,7 @@ html {
   --header-margin-vertical: 18px;
   --transition-duration-default: 350ms;
   --padding-section-horizontal: 20px;
-  --color-accent: #ac3123;
+  --color-accent: #D74C3C;
   --color-bright: white;
   --color-dark: black;
   --transform-scale-default: scale(1.02);

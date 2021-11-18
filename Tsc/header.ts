@@ -4,31 +4,39 @@ const navLinks = document.querySelectorAll("#main-nav-header nav a");
 
 
 window.addEventListener('scroll',function(){
-    let breakpoint = document.querySelector("header").style.marginTop;
-    let className = "sticky";
+    let header = document.querySelector("header");
+    if(header == null)
+        return;
+    let breakpoint: number = +header.style.marginTop;
+    let className: string = "sticky";
     if (window.scrollY > breakpoint)
-        document.querySelector("header").classList.add(className);
+        header.classList.add(className);
     else
-        document.querySelector("header").classList.remove(className);
+        header.classList.remove(className);
 });
 
 
 function mobileMenuToggle() {
+    if(mainHeader == null) return;
     mainHeader.classList.toggle("mobile-nav-active");
     toggleBodyScroll();
 }
 
 function mobileMenuClose() {
+    if(mainHeader == null) return;
     mainHeader.classList.remove("mobile-nav-active");
     toggleBodyScroll();
 }
 
-mobileMenuIcon.addEventListener("click",mobileMenuToggle);
+if(mobileMenuIcon != null)
+    mobileMenuIcon.addEventListener("click",mobileMenuToggle);
 navLinks.forEach(elem => elem.addEventListener("click",mobileMenuClose));
 
 function toggleBodyScroll() {
-    if(mainHeader.classList.contains("mobile-nav-active"))
-        document.querySelector("body").style.overflow = "hidden";
+    let body = document.querySelector("body");
+    if(body == null) return;
+    if(mainHeader != null && mainHeader.classList.contains("mobile-nav-active"))
+        body.style.overflow = "hidden";
     else
-        document.querySelector("body").style.overflow = "auto";
+        body.style.overflow = "auto";
 }

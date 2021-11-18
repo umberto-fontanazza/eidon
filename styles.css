@@ -271,12 +271,10 @@ footer .low-footer > div:last-child {
   justify-content: center;
   align-items: center;
   transition: var(--transition-duration-default) ease;
+  margin-right: 10px;
 }
 .clients .client-logos .client-link img {
   height: 80%;
-}
-.clients .client-logos .client-link:not(:last-of-type) {
-  margin-right: 10px;
 }
 .clients .client-logos .client-link:hover {
   transform: var(--transform-scale-default);

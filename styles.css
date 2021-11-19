@@ -171,7 +171,7 @@ footer .low-footer > div:last-child {
   z-index: 1;
   top: 0;
   left: 0;
-  filter: grayscale(100%) brightness(20%);
+  filter: grayscale(100%) brightness(25%);
 }
 .opening-slider a.btn:nth-of-type(2) {
   border-color: var(--color-bright);
@@ -229,6 +229,12 @@ footer .low-footer > div:last-child {
   .two-cards .container p {
     text-align: center;
   }
+}
+.two-cards .two-columns:first-of-type img {
+  filter: grayscale(100%) contrast(90%);
+}
+.two-cards .two-columns:last-of-type img {
+  filter: brightness(80%) grayscale(100%);
 }
 
 @media screen and (min-width: 768px) {

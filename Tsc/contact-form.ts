@@ -37,6 +37,11 @@ function replaceNode(selector: string, path: string): void {
     newElement.parentElement?.insertBefore(comment,newElement);
 }
 
+/**
+ * Handles the submission of a form
+ * @param event
+ * @returns {void}
+ */
 async function handleSubmit(event: any) {
     if(form == null)
         return;

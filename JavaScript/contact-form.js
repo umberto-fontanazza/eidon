@@ -69,6 +69,11 @@ function replaceNode(selector, path) {
     var comment = document.createComment("HTML injected by function replaceNode()");
     (_b = newElement.parentElement) === null || _b === void 0 ? void 0 : _b.insertBefore(comment, newElement);
 }
+/**
+ * Handles the submission of a form
+ * @param event
+ * @returns {void}
+ */
 function handleSubmit(event) {
     return __awaiter(this, void 0, void 0, function () {
         var data;

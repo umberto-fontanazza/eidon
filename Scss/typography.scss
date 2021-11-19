@@ -83,3 +83,7 @@ small, .text_small {font-size: 0.8rem;}
 .subtitle {
     color: var(--color-accent);
 }
+
+::selection {
+    background-color: rgba(var(--color-rgbval-accent),0.5);
+}

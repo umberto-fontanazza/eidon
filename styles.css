@@ -134,6 +134,12 @@ footer .low-footer .low-footer-inner {
   footer {
     scroll-snap-align: start;
   }
+  footer a {
+    transition: var(--transition-duration-default);
+  }
+  footer a:hover {
+    transform: translate(2px);
+  }
   footer .high-footer {
     display: flex;
     justify-content: space-between;
@@ -476,14 +482,21 @@ small, .text_small {
   color: var(--color-accent);
 }
 
+::selection {
+  background-color: rgba(var(--color-rgbval-accent), 0.5);
+}
+
 html {
   --header-height: 70px;
   --header-margin-vertical: 18px;
   --transition-duration-default: 350ms;
   --padding-section-horizontal: 20px;
-  --color-accent: #D74C3C;
-  --color-bright: white;
-  --color-dark: black;
+  --color-rgbval-accent: 215, 76, 60;
+  --color-accent: rgb(var(--color-rgbval-accent));
+  --color-rgbval-bright: 255,255,255;
+  --color-bright: rgb(var(--color-rgbval-bright));
+  --color-rgbval-dark: 0,0,0;
+  --color-dark: rgb(var(--color-rgbval-dark));
   --transform-scale-default: scale(1.02);
   /* Animations */
   --animation-duration-default: 1.2s;
@@ -538,6 +551,7 @@ a.btn {
   font-size: 16px;
   text-transform: uppercase;
   margin: 10px 0;
+  transition: var(--transition-duration-default);
 }
 
 button {

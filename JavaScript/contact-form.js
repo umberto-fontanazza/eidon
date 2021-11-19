@@ -36,6 +36,37 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var form = document.getElementById("contact-form");
+/**
+ * This function replaces the content of a div
+ * identified by the first parameter which is a CSS selector
+ * with the content from an html file identified by the path
+ * given by the second parameter string
+ * @param {string} selector - CSS selector used to identify the div to be replaced
+ * @param {string} path - path of the html file
+ * @returns {void}
+ *
+ * @todo develop function
+ */
+function replaceNode(selector, path) {
+    var _a, _b;
+    //searching the DOM for the element to replce
+    var query = document.querySelector(selector);
+    if (query == null)
+        throw new Error("querySelector() failed to find any HTMLElement corresponding to CSS selector: " + selector);
+    var element = query;
+    var newElement = document.createElement('div');
+    //creating the new node from another file
+    fetch(path)
+        .then(function (response) { return response.text(); })
+        .then(function (data) {
+        newElement.innerHTML = data;
+    });
+    element.insertAdjacentElement('afterend', newElement); //inserting new node
+    (_a = element.parentElement) === null || _a === void 0 ? void 0 : _a.removeChild(element); //removing old node
+    //inserting HTML comment to explain the origin of the new HTMLElement
+    var comment = document.createComment("HTML injected by function replaceNode()");
+    (_b = newElement.parentElement) === null || _b === void 0 ? void 0 : _b.insertBefore(comment, newElement);
+}
 function handleSubmit(event) {
     return __awaiter(this, void 0, void 0, function () {
         var data;
@@ -51,11 +82,8 @@ function handleSubmit(event) {
                     'Accept': 'application/json'
                 }
             }).then(function (response) {
+                replaceNode(".form-container", "./Snippets/confirmation.html");
                 console.log("Form submitted successfully");
-                /**
-                 * @todo replace the form with a confirmation message
-                 */
-                //window.location.href = "./Pages/confirmation.html";
                 if (form != null)
                     form.reset();
             }).catch(function (error) {
@@ -67,21 +95,3 @@ function handleSubmit(event) {
 }
 if (form != null)
     form.addEventListener("submit", handleSubmit);
-/**
- * This function replaces the content of a div
- * identified by the first parameter which is a CSS selector
- * with the content from an html file identified by the path
- * given by the second parameter string
- * @param {string} selector - CSS selector used to identify the div to be replaced
- * @param {string} path - path of the html file
- * @returns {void}
- *
- * @todo develop function
- */
-function replaceNode(selector, path) {
-    fetch(path)
-        .then(function (response) { return response.text(); })
-        .then(function (data) {
-    });
-}
-//replaceNode('form','./Snippets/confirmation.html');

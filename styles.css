@@ -178,7 +178,7 @@ footer .low-footer > div:last-child {
 }
 @media screen and (min-width: 768px) {
   .opening-slider {
-    height: calc(100vh - var(--header-height) - 2*var(--header-margin-vertical));
+    height: calc(100vh - var(--header-height) - 2 * var(--header-margin-vertical));
     display: flex;
     align-items: center;
   }
@@ -326,7 +326,7 @@ footer .low-footer > div:last-child {
   caret-color: var(--color-accent);
   font-size: 16px;
   display: block;
-  width: calc(100% - 15px*2 - 2px);
+  width: calc(100% - 30px - 2px);
   margin-bottom: 15px;
   margin-top: 5px;
   transition: var(--transition-duration-default) ease;
@@ -365,7 +365,7 @@ footer .low-footer > div:last-child {
     flex-basis: 100%;
   }
   .contact-us .form-container form label.name, .contact-us .form-container form label.surname, .contact-us .form-container form label.email, .contact-us .form-container form label.website {
-    flex-basis: calc(50% - 10px /2);
+    flex-basis: calc(50% - 5px);
   }
   .contact-us .form-container form textarea {
     height: 12.5vh;
@@ -517,7 +517,7 @@ html {
     align-items: center;
   }
   html section:first-of-type {
-    scroll-margin-top: calc(var(--header-height) + 2*var(--header-margin-vertical));
+    scroll-margin-top: calc(var(--header-height) + 2 * var(--header-margin-vertical));
   }
 }
 

@@ -61,6 +61,8 @@ function replaceNode(selector, path) {
         .then(function (data) {
         newElement.innerHTML = data;
     });
+    //cloning element classList to newElement classList
+    element.classList.forEach(function (cls) { return newElement.classList.add(cls); });
     element.insertAdjacentElement('afterend', newElement); //inserting new node
     (_a = element.parentElement) === null || _a === void 0 ? void 0 : _a.removeChild(element); //removing old node
     //inserting HTML comment to explain the origin of the new HTMLElement

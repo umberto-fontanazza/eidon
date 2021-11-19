@@ -26,6 +26,9 @@ function replaceNode(selector: string, path: string): void {
             newElement.innerHTML = data;
     });
 
+    //cloning element classList to newElement classList
+    element.classList.forEach((cls: string)=>newElement.classList.add(cls))
+
     element.insertAdjacentElement('afterend',newElement); //inserting new node
     element.parentElement?.removeChild(element); //removing old node
 

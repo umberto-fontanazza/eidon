@@ -145,10 +145,14 @@ footer .low-footer .low-footer-inner {
     margin-top: 1em;
     margin-bottom: 1em;
   }
-  footer .high-footer nav a {
+  footer .high-footer .footer-menu-container h6::selection {
+    color: var(--color-bright);
+    background-color: var(--color-dark);
+  }
+  footer .high-footer .footer-menu-container nav a {
     transition: var(--transition-duration-default);
   }
-  footer .high-footer nav a:hover {
+  footer .high-footer .footer-menu-container nav a:hover {
     transform: translate(2px);
   }
   footer .high-footer > :first-child,
@@ -164,6 +168,10 @@ footer .low-footer > :last-child {
   }
   footer .low-footer .low-footer-inner .social-container {
     display: inline-block;
+  }
+  footer .low-footer .low-footer-inner .copyright::selection {
+    color: var(--color-bright);
+    background-color: var(--color-dark);
   }
 }
 

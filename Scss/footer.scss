@@ -50,13 +50,17 @@ footer {
                 h6 {
                     margin-top: 1em;
                     margin-bottom: 1em;
+                    &::selection {
+                        color: var(--color-bright);
+                        background-color: var(--color-dark);
+                    }
                 }
-            }
-            nav {
-                a {
-                    transition: var(--transition-duration-default);
-                    &:hover {
-                        transform: translate(2px);
+                nav {
+                    a {
+                        transition: var(--transition-duration-default);
+                        &:hover {
+                            transform: translate(2px);
+                        }
                     }
                 }
             }
@@ -79,6 +83,13 @@ footer {
 
                 .social-container {
                     display: inline-block;
+                }
+
+                .copyright {
+                    &::selection {
+                        color: var(--color-bright);
+                        background-color: var(--color-dark);
+                    }
                 }
             }
         }

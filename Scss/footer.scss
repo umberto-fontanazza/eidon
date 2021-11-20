@@ -40,13 +40,6 @@ footer {
     @media screen and (min-width: 768px) {
         scroll-snap-align: start;
 
-        a {
-            transition: var(--transition-duration-default);
-            &:hover {
-                transform: translate(2px);
-            }
-        }
-
         .high-footer {
             display: flex;
             justify-content: space-between;
@@ -59,15 +52,23 @@ footer {
                     margin-bottom: 1em;
                 }
             }
+            nav {
+                a {
+                    transition: var(--transition-duration-default);
+                    &:hover {
+                        transform: translate(2px);
+                    }
+                }
+            }
         }
 
         .high-footer,
         .low-footer {
-            &>div:first-child {
+            &>:first-child {
                 margin-left: var(--padding-section-horizontal)
             }
 
-            &>div:last-child {
+            &>:last-child {
                 margin-right: var(--padding-section-horizontal);
             }
         }

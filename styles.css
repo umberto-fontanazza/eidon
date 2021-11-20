@@ -489,6 +489,10 @@ small, .text_small {
 .subtitle {
   color: var(--color-accent);
 }
+.subtitle::selection {
+  color: var(--color-bright);
+  background-color: rgba(var(--color-rgbval-accent), 0.5);
+}
 
 ::selection {
   background-color: rgba(var(--color-rgbval-accent), 0.5);

@@ -565,6 +565,9 @@ a.btn {
   margin: 10px 0;
   transition: var(--transition-duration-default);
 }
+a.btn:hover {
+  transform: translateY(-3px);
+}
 
 button {
   padding: 19px 36px;

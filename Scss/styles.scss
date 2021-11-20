@@ -76,6 +76,10 @@ a {
         text-transform: uppercase;
         margin: 10px 0;
         transition: var(--transition-duration-default);
+        &:hover {
+            transform: translateY(-3px);
+            //this is overridden by the animation @TODO: to be fixed
+        }
     }
 }
 

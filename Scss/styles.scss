@@ -106,7 +106,7 @@ button {
 
 section {
     padding: 0 var(--padding-section-horizontal);
-    overflow-x: hidden;
+    margin-bottom: 15vh;
 
     &:first-of-type {
         padding-top: var(--header-height);

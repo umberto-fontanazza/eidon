@@ -57,7 +57,7 @@ function toggleBodyScroll() {
  * @param {string} linkSelector - main nav menu links inside the header
  *
  * @return {void} -nothing is returned
- * @todo - to be completed
+ * @todo - undesired behavior for isWindowScrollPast()
  */
 (function hideHeaderMenuClick(h: any, linkSelector: string): void {
     let viewportHeight: number = 100;
@@ -66,7 +66,7 @@ function toggleBodyScroll() {
     let header: HTMLElement = h;
     let menuLinks = document.querySelectorAll(header.tagName + " " + linkSelector);
     menuLinks.forEach(link => link.addEventListener("click",evt => {
-        if(isWindowScrollPast(viewportHeight)){
+        if(/*unreliable check*/isWindowScrollPast(viewportHeight)){
             header.classList.add("hidden");
         }
     }))
@@ -85,6 +85,11 @@ function isWindowScrollPast(viewportHeight: number): boolean {
     return false
 }
 
+/**
+ * 
+ * @param h 
+ * @returns 
+ */
 function resetHeaderOnScrollUp(h: any,): void {
     if(h == null)
         throw "Header HTMLElement reference is null";
@@ -93,4 +98,8 @@ function resetHeaderOnScrollUp(h: any,): void {
         return;
     header.classList.remove("hidden");
 }
+
+window.addEventListener("scroll", evt =>{
+    console.log(evt)
+})
 

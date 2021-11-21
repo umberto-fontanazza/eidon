@@ -96,7 +96,7 @@ function isWindowScrollPast(viewportHeight: number): boolean {
  * @param {number} offsetMinDown minimum scroll delta to hide header
  * @returns {void}
  */
-function toggleHeaderOnScroll(h: any, offsetY: number, offsetMinUp: number = 20, offsetMinDown: number = 100): void {
+function toggleHeaderOnScroll(h: any, offsetY: number, offsetMinUp: number = 20, offsetMinDown: number = 75): void {
     if(h == null)
         throw "Header HTMLElement reference is null";
     let header: HTMLElement = h;

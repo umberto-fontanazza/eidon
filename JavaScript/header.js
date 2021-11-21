@@ -93,7 +93,7 @@ function isWindowScrollPast(viewportHeight) {
  */
 function toggleHeaderOnScroll(h, offsetY, offsetMinUp, offsetMinDown) {
     if (offsetMinUp === void 0) { offsetMinUp = 20; }
-    if (offsetMinDown === void 0) { offsetMinDown = 100; }
+    if (offsetMinDown === void 0) { offsetMinDown = 75; }
     if (h == null)
         throw "Header HTMLElement reference is null";
     var header = h;

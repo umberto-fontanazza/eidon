@@ -90,6 +90,10 @@ header {
             font-size: large;
         }
 
+        &.hidden {
+            transform: translateY(0);
+        }
+
         &.sticky {
             background-color: var(--color-bright);
 

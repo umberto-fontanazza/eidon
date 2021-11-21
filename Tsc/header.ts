@@ -1,6 +1,7 @@
 const mobileMenuIcon = document.querySelector("#mobile-menu-icon");
 const mainHeader = document.querySelector("#main-nav-header");
 const navLinks = document.querySelectorAll("#main-nav-header nav a");
+let lastScrollTop: number = 0;
 
 
 window.addEventListener('scroll', function (): void {
@@ -86,20 +87,37 @@ function isWindowScrollPast(viewportHeight: number): boolean {
 }
 
 /**
- * 
- * @param h 
- * @returns 
+ * This function take in the header HTMLElement, the scroll offset (negative if scrolling up) and an optional minimum offset.
+ * It shows again the header (by removing the class .hidden) when the the user scrolls up by at least offsetMin pixels
+ * or hides the header when the scroll is down.
+ * @param {any} h headerHTMLElement
+ * @param {number} offsetY new win.scrollY minus old win.scrollY
+ * @param {number} offsetMinUp minimum scroll delta to show again header
+ * @param {number} offsetMinDown minimum scroll delta to hide header
+ * @returns {void}
  */
-function resetHeaderOnScrollUp(h: any,): void {
+function toggleHeaderOnScroll(h: any, offsetY: number, offsetMinUp: number = 20, offsetMinDown: number = 100): void {
     if(h == null)
         throw "Header HTMLElement reference is null";
     let header: HTMLElement = h;
-    if(header.classList.contains("hidden"))
-        return;
-    header.classList.remove("hidden");
+
+    if(offsetY > 0) {
+        if(offsetY < offsetMinDown)
+            return
+        header.classList.add("hidden")
+    }
+    else {
+        if(Math.abs(offsetY) < offsetMinUp)
+            return
+        header.classList.remove("hidden");
+    }
 }
 
-window.addEventListener("scroll", evt =>{
-    console.log(evt)
-})
-
+let resetHeaderInit = (function(): void{
+    window.addEventListener("scroll", evt =>{
+        let delta: number;
+        delta = window.scrollY - lastScrollTop;
+        lastScrollTop = window.scrollY;
+        toggleHeaderOnScroll(mainHeader,delta);
+    })
+})()

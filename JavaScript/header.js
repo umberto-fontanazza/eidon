@@ -2,6 +2,7 @@
 var mobileMenuIcon = document.querySelector("#mobile-menu-icon");
 var mainHeader = document.querySelector("#main-nav-header");
 var navLinks = document.querySelectorAll("#main-nav-header nav a");
+var lastScrollTop = 0;
 window.addEventListener('scroll', function () {
     var header = document.querySelector("header");
     if (header == null)
@@ -81,18 +82,37 @@ function isWindowScrollPast(viewportHeight) {
     return false;
 }
 /**
- *
- * @param h
- * @returns
+ * This function take in the header HTMLElement, the scroll offset (negative if scrolling up) and an optional minimum offset.
+ * It shows again the header (by removing the class .hidden) when the the user scrolls up by at least offsetMin pixels
+ * or hides the header when the scroll is down.
+ * @param {any} h headerHTMLElement
+ * @param {number} offsetY new win.scrollY minus old win.scrollY
+ * @param {number} offsetMinUp minimum scroll delta to show again header
+ * @param {number} offsetMinDown minimum scroll delta to hide header
+ * @returns {void}
  */
-function resetHeaderOnScrollUp(h) {
+function toggleHeaderOnScroll(h, offsetY, offsetMinUp, offsetMinDown) {
+    if (offsetMinUp === void 0) { offsetMinUp = 20; }
+    if (offsetMinDown === void 0) { offsetMinDown = 100; }
     if (h == null)
         throw "Header HTMLElement reference is null";
     var header = h;
-    if (header.classList.contains("hidden"))
-        return;
-    header.classList.remove("hidden");
+    if (offsetY > 0) {
+        if (offsetY < offsetMinDown)
+            return;
+        header.classList.add("hidden");
+    }
+    else {
+        if (Math.abs(offsetY) < offsetMinUp)
+            return;
+        header.classList.remove("hidden");
+    }
 }
-window.addEventListener("scroll", function (evt) {
-    console.log(evt);
-});
+var resetHeaderInit = (function () {
+    window.addEventListener("scroll", function (evt) {
+        var delta;
+        delta = window.scrollY - lastScrollTop;
+        lastScrollTop = window.scrollY;
+        toggleHeaderOnScroll(mainHeader, delta);
+    });
+})();

@@ -87,7 +87,7 @@ function isWindowScrollPast(viewportHeight: number): boolean {
 }
 
 /**
- * This function take in the header HTMLElement, the scroll offset (negative if scrolling up) and an optional minimum offset.
+ * This function takes in the header HTMLElement, the scroll offset (negative if scrolling up) and an optional minimum offset.
  * It shows again the header (by removing the class .hidden) when the the user scrolls up by at least offsetMin pixels
  * or hides the header when the scroll is down.
  * @param {any} h headerHTMLElement

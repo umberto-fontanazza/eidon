@@ -60,11 +60,37 @@ function toggleBodyScroll() {
  * @todo - to be completed
  */
 (function hideHeaderMenuClick(h: any, linkSelector: string): void {
+    let viewportHeight: number = 100;
     if(h == null)
         return;
     let header: HTMLElement = h;
     let menuLinks = document.querySelectorAll(header.tagName + " " + linkSelector);
     menuLinks.forEach(link => link.addEventListener("click",evt => {
-        header.style.transform = "translateY(-100%)";
+        if(isWindowScrollPast(viewportHeight)){
+            header.classList.add("hidden");
+        }
     }))
 })(mainHeader,"nav a");
+
+/**
+ * This utility function answers to the question
+ * "has the window scrolled past a certain height in vh?"
+ * @param {number} viewportHeight - the breakpoint height in vh
+ * @returns {boolean} - the answer to the simple question
+ */
+function isWindowScrollPast(viewportHeight: number): boolean {
+    let windowScrollWh: number = window.scrollY * 100 / window.innerHeight;
+    if(windowScrollWh > viewportHeight)
+        return true
+    return false
+}
+
+function resetHeaderOnScrollUp(h: any,): void {
+    if(h == null)
+        throw "Header HTMLElement reference is null";
+    let header: HTMLElement = h;
+    if(header.classList.contains("hidden"))
+        return;
+    header.classList.remove("hidden");
+}
+

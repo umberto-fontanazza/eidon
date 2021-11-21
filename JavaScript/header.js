@@ -57,11 +57,34 @@ function toggleBodyScroll() {
  * @todo - to be completed
  */
 (function hideHeaderMenuClick(h, linkSelector) {
+    var viewportHeight = 100;
     if (h == null)
         return;
     var header = h;
     var menuLinks = document.querySelectorAll(header.tagName + " " + linkSelector);
     menuLinks.forEach(function (link) { return link.addEventListener("click", function (evt) {
-        header.style.transform = "translateY(-100%)";
+        if (isWindowScrollPast(viewportHeight)) {
+            header.classList.add("hidden");
+        }
     }); });
 })(mainHeader, "nav a");
+/**
+ * This utility function answers to the question
+ * "has the window scrolled past a certain height in vh?"
+ * @param {number} viewportHeight - the breakpoint height in vh
+ * @returns {boolean} - the answer to the simple question
+ */
+function isWindowScrollPast(viewportHeight) {
+    var windowScrollWh = window.scrollY * 100 / window.innerHeight;
+    if (windowScrollWh > viewportHeight)
+        return true;
+    return false;
+}
+function resetHeaderOnScrollUp(h) {
+    if (h == null)
+        throw "Header HTMLElement reference is null";
+    var header = h;
+    if (header.classList.contains("hidden"))
+        return;
+    header.classList.remove("hidden");
+}

@@ -8,6 +8,11 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    transition: var(--transition-duration-default) ease;
+
+    &.hidden {
+        transform: translateY(-100%);
+    }
 
     .logo-container {
         display: flex;

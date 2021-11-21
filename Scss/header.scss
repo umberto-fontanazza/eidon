@@ -10,6 +10,10 @@ header {
     z-index: 1000;
     transition: var(--transition-duration-default) ease;
 
+    .progress-bar {
+        display: none;
+    }
+
     &.hidden {
         transform: translateY(-100%);
     }
@@ -79,6 +83,22 @@ header {
         width: calc(100% - 2 * var(--padding-section-horizontal));
         transition-duration: var(--transition-duration-default);
         background-color: transparent;
+
+        .progress-bar {
+            display: block;
+            background: linear-gradient(
+                90deg,
+                var(--color-accent) 0%,
+                var(--color-accent) 97%,
+                transparent 100%
+            );
+            width: 110%;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 5px;
+            transform: translateX(-100%);
+        }
 
         nav {
             display: flex;

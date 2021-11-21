@@ -121,3 +121,23 @@ let resetHeaderInit = (function(): void{
         toggleHeaderOnScroll(mainHeader,delta);
     })
 })()
+
+/**
+ * This function handles the progress of the reading bar below the header on desktop
+ * @param {string} barSelector is a CSS selector for the reading bar element
+ */
+function readingBarUpdate(barSelector: string): void {
+    let barQuery = document.querySelector<HTMLElement>(barSelector)
+    if(barQuery == null)
+        throw "Reading bar selector returned null"
+    let bar: HTMLElement = barQuery
+    let bodyHeight: number = document.body.clientHeight
+
+    let progressPercentage: number = window.scrollY * 100 / (bodyHeight - window.innerHeight)
+
+    bar.style.transform = "translateX(-"+ (100 - progressPercentage) +"%)";
+}
+
+window.addEventListener("scroll",evt => {
+    readingBarUpdate("header .progress-bar");
+})

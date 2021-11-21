@@ -116,3 +116,19 @@ var resetHeaderInit = (function () {
         toggleHeaderOnScroll(mainHeader, delta);
     });
 })();
+/**
+ * This function handles the progress of the reading bar below the header on desktop
+ * @param {string} barSelector is a CSS selector for the reading bar element
+ */
+function readingBarUpdate(barSelector) {
+    var barQuery = document.querySelector(barSelector);
+    if (barQuery == null)
+        throw "Reading bar selector returned null";
+    var bar = barQuery;
+    var bodyHeight = document.body.clientHeight;
+    var progressPercentage = window.scrollY * 100 / (bodyHeight - window.innerHeight);
+    bar.style.transform = "translateX(-" + (100 - progressPercentage) + "%)";
+}
+window.addEventListener("scroll", function (evt) {
+    readingBarUpdate("header .progress-bar");
+});

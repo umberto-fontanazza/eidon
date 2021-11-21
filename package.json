@@ -1,0 +1,19 @@
+{
+  "name": "eidon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umberto-fontanazza/eidon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umberto-fontanazza/eidon/issues"
+  },
+  "homepage": "https://github.com/umberto-fontanazza/eidon#readme"
+}

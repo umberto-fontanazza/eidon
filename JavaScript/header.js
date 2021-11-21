@@ -46,3 +46,22 @@ function toggleBodyScroll() {
     else
         body.style.overflow = "auto";
 }
+/**
+ * This function hides the header anytime
+ * a link from the main nav menu in the header
+ * is clicked
+ * @param {HTMLElement} header - takes in the header element
+ * @param {string} linkSelector - main nav menu links inside the header
+ *
+ * @return {void} -nothing is returned
+ * @todo - to be completed
+ */
+(function hideHeaderMenuClick(h, linkSelector) {
+    if (h == null)
+        return;
+    var header = h;
+    var menuLinks = document.querySelectorAll(header.tagName + " " + linkSelector);
+    menuLinks.forEach(function (link) { return link.addEventListener("click", function (evt) {
+        header.style.transform = "translateY(-100%)";
+    }); });
+})(mainHeader, "nav a");

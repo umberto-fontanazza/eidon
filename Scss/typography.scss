@@ -1,25 +1,31 @@
+$font-display-default: swap;
+
 @font-face {
     /* Visit URL: https://www.dafont.com/made-saonara.font */
     font-family: "Saonara";
     src: url("./Assets/Saonara.otf") format("opentype");
+    font-display: $font-display-default;
 }
 
 @font-face {
     /* Visit URL: https://www.dafont.com/made-saonara.font */
     font-family: "Saonara 2";
     src: url("./Assets/Saonara\ 2.otf") format("opentype");
+    font-display: $font-display-default;
 }
 
 @font-face {
     /* Visit URL: https://www.dafontfree.io/geliat-font/ */
     font-family: "Geliat Extrabold";
     src: url("./Assets/Geliat\ Extrabold.otf") format("opentype");
+    font-display: $font-display-default;
 }
 
 @font-face {
     /* Visit URL: https://www.dafontfree.io/geliat-font/ */
     font-family: "Geliat Extralight";
     src: url("./Assets/Geliat\ Extralight.otf") format("opentype");
+    font-display: $font-display-default;
 }
 
 h1,

@@ -10,6 +10,10 @@ header {
     z-index: 1000;
     transition: var(--transition-duration-default) ease;
 
+    & > :first-child {
+        padding: 0;
+    }
+
     .progress-bar {
         display: none;
     }
@@ -66,6 +70,7 @@ header {
         &:last-child {
             text-decoration: underline var(--color-accent);
             text-underline-offset: 5px;
+            padding-right: 0;
 
             &::first-letter {
                 color: var(--color-accent);

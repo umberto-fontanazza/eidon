@@ -1,6 +1,5 @@
 @use "./header.scss";
 @use "./footer.scss";
-
 @use "./index.scss";
 @use "./typography.scss";
 
@@ -8,6 +7,7 @@ html {
     --header-height: 70px;
     --header-margin-vertical: 18px;
     --transition-duration-default: 350ms;
+    --transition-duration-long: 1s;
     --padding-section-horizontal: 20px;
 
     --color-rgbval-accent: 215, 76, 60;
@@ -120,9 +120,17 @@ section {
     }
 }
 
+.animated {
+    transition-duration: var(--transition-duration-long);
+    &:not(.animation-ended) {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
 /* Keyframes */
 
-@keyframes fade-in-up {
+/* @keyframes fade-in-up {
     0% {
         opacity: 0;
         transform: translateY(var(--animation-fade-in-up-transform-offset));
@@ -132,7 +140,7 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} */
 
 /* Applying animation named "fade-in-up" */
 h1,
@@ -145,7 +153,10 @@ p,
 a.btn,
 span.subtitle {
 
-        animation: var(--animation-fade-in-up);
+        //animation: var(--animation-fade-in-up);
+        /* opacity: 0;
+        transform: translateY(50px);
+        transition: var(--transition-duration-default) ease; */
 
 }
 

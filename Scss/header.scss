@@ -12,6 +12,7 @@ header {
 
     & > :first-child {
         padding: 0;
+        margin-left: var(--padding-section-horizontal);
     }
 
     .progress-bar {
@@ -38,8 +39,8 @@ header {
 
     #mobile-menu-icon {
         color: var(--color-dark);
-        padding: 10px;
-        margin-right: 10px;
+        padding: calc(var(--padding-section-horizontal)/2);
+        margin-right: calc(var(--padding-section-horizontal)/2);
         font-size: 1.7em;
     }
 

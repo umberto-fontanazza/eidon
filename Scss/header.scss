@@ -84,22 +84,6 @@ header {
         transition-duration: var(--transition-duration-default);
         background-color: transparent;
 
-        .progress-bar {
-            display: block;
-            background: linear-gradient(
-                90deg,
-                var(--color-accent) 0%,
-                var(--color-accent) 97%,
-                transparent 100%
-            );
-            width: 110%;
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            height: 5px;
-            transform: translateX(-100%);
-        }
-
         nav {
             display: flex;
             align-items: center;
@@ -125,6 +109,17 @@ header {
 
             a {
                 color: var(--color-dark);
+            }
+
+
+            .progress-bar {
+                display: block;
+                background-color: transparent;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                height: 5px;
             }
         }
 

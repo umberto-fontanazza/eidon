@@ -3,6 +3,7 @@ var mobileMenuIcon = document.querySelector("#mobile-menu-icon");
 var mainHeader = document.querySelector("#main-nav-header");
 var navLinks = document.querySelectorAll("#main-nav-header nav a");
 var lastScrollTop = 0;
+var colorAccent = getComputedStyle(document.documentElement).getPropertyValue('--color-accent');
 window.addEventListener('scroll', function () {
     var header = document.querySelector("header");
     if (header == null)
@@ -127,7 +128,8 @@ function readingBarUpdate(barSelector) {
     var bar = barQuery;
     var bodyHeight = document.body.clientHeight;
     var progressPercentage = window.scrollY * 100 / (bodyHeight - window.innerHeight);
-    bar.style.transform = "translateX(-" + (100 - progressPercentage) + "%)";
+    var linearGradient = "linear-gradient(90deg, " + colorAccent + " 0%, " + colorAccent + " " + progressPercentage + "%, transparent " + (progressPercentage + 5) + "%, transparent)";
+    bar.style.setProperty("background", linearGradient);
 }
 window.addEventListener("scroll", function (evt) {
     readingBarUpdate("header .progress-bar");

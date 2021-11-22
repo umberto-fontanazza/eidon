@@ -2,6 +2,7 @@ const mobileMenuIcon = document.querySelector("#mobile-menu-icon");
 const mainHeader = document.querySelector("#main-nav-header");
 const navLinks = document.querySelectorAll("#main-nav-header nav a");
 let lastScrollTop: number = 0;
+let colorAccent = getComputedStyle(document.documentElement).getPropertyValue('--color-accent')
 
 
 window.addEventListener('scroll', function (): void {
@@ -134,10 +135,12 @@ function readingBarUpdate(barSelector: string): void {
     let bodyHeight: number = document.body.clientHeight
 
     let progressPercentage: number = window.scrollY * 100 / (bodyHeight - window.innerHeight)
-
-    bar.style.transform = "translateX(-"+ (100 - progressPercentage) +"%)";
+    let linearGradient: string = "linear-gradient(90deg, "+colorAccent+" 0%, "+colorAccent+" "+progressPercentage+"%, transparent "+(progressPercentage+5)+"%, transparent)"
+    bar.style.setProperty("background",linearGradient)
 }
 
 window.addEventListener("scroll",evt => {
     readingBarUpdate("header .progress-bar");
 })
+
+

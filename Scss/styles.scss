@@ -76,8 +76,7 @@ a {
         margin: 10px 0;
         transition: var(--transition-duration-default);
         &:hover {
-            transform: translateY(-3px);
-            //this is overridden by the animation @TODO: to be fixed
+            transform: var(--transform-scale-default);
         }
     }
 }
@@ -126,38 +125,10 @@ section {
         transform: translateY(50px);
         opacity: 0;
     }
-}
 
-/* Keyframes */
-
-/* @keyframes fade-in-up {
-    0% {
-        opacity: 0;
-        transform: translateY(var(--animation-fade-in-up-transform-offset));
+    &.animation-ended {
+        transition-delay: 0;
     }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-} */
-
-/* Applying animation named "fade-in-up" */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a.btn,
-span.subtitle {
-
-        //animation: var(--animation-fade-in-up);
-        /* opacity: 0;
-        transform: translateY(50px);
-        transition: var(--transition-duration-default) ease; */
-
 }
 
 .under-construction {

@@ -30,6 +30,7 @@ $transition-delay-short: 0.2s;
     .block-left {
         position: relative;
         z-index: 3;
+        transition-delay: 0.5s;
     }
 
     @media screen and (min-width: 768px) {
@@ -149,6 +150,7 @@ $transition-delay-short: 0.2s;
 
         p {
             font-size: 20px;
+            transition-delay: $transition-delay-short;
         }
 
         .image-container {
@@ -194,12 +196,11 @@ $transition-delay-short: 0.2s;
             height: 10vh;
             .client-link {
                 flex-basis: 30%;
-
-                @for $client from 1 to 7 {
-                    &:nth-of-type(#{$client}) {
-                        transition-delay: $client * $transition-delay-short;
+                    @for $client from 1 to 7 {
+                        &:nth-of-type(#{$client}) {
+                            transition-delay: $client * $transition-delay-short;
+                        }
                     }
-                }
             }
         }
 

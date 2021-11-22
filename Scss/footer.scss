@@ -17,8 +17,11 @@ footer {
     .footer-menu-container {
         text-align: center;
 
-        h6 {
+        .footer-column-title {
+            display: block;
             margin-bottom: 10px;
+            font-family: var(--font-family-titles);
+            margin-top: 2em;
         }
 
         nav a {
@@ -47,7 +50,7 @@ footer {
             .footer-menu-container {
                 text-align: left;
 
-                h6 {
+                .footer-column-title {
                     margin-top: 1em;
                     margin-bottom: 1em;
                     &::selection {

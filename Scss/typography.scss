@@ -28,6 +28,11 @@ $font-display-default: swap;
     font-display: $font-display-default;
 }
 
+html {
+    --font-family-titles: "Saonara 2",
+    --font-family-paragraphs: "Geliat Extralight"
+}
+
 h1,
 h2,
 h3,

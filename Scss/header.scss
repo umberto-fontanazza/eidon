@@ -10,11 +10,6 @@ header {
     z-index: 1000;
     transition: var(--transition-duration-default) ease;
 
-    & > :first-child {
-        padding: 0;
-        margin-left: var(--padding-section-horizontal);
-    }
-
     .progress-bar {
         display: none;
     }
@@ -23,16 +18,20 @@ header {
         transform: translateY(-100%);
     }
 
-    .logo-container {
-        display: flex;
-        align-items: center;
-        height: var(--header-height);
+    .logo-container-wrapper {
+        padding: 0;
+        margin-left: var(--padding-section-horizontal);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: var(--header-height);
 
-        .logo {
-            height: 70%;
+            .logo {
+                height: 70%;
 
-            &.bright {
-                display: none;
+                &.bright {
+                    display: none;
+                }
             }
         }
     }
@@ -89,14 +88,18 @@ header {
         transition-duration: var(--transition-duration-default);
         background-color: transparent;
 
+        .logo-container-wrapper {
+            margin-left: 0;
+        }
+
         nav {
             display: flex;
             align-items: center;
-        }
 
-        a {
-            color: var(--color-bright);
-            font-size: large;
+            a {
+                color: var(--color-bright);
+                font-size: large;
+            }
         }
 
         &.hidden {
@@ -115,7 +118,6 @@ header {
             a {
                 color: var(--color-dark);
             }
-
 
             .progress-bar {
                 display: block;

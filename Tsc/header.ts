@@ -166,4 +166,17 @@ function cookieInit(cookieSnippetPath: string, cookieBarId: string): void {
             document.body.appendChild(cookieContainer)
         })
 }
-cookieInit(cookieSnippetPath, "cookie-bar");
+cookieInit(cookieSnippetPath, "cookie-bar")
+
+
+/*Cookies*/
+enum CookieConsentStatus {
+    granted = "GRANTED",
+    denied = "DENIED",
+    undefined = "UNDEFINED"
+}
+
+
+function getCookieConsent(): boolean {
+    
+}

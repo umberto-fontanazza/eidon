@@ -157,3 +157,12 @@ function cookieInit(cookieSnippetPath, cookieBarId) {
     });
 }
 cookieInit(cookieSnippetPath, "cookie-bar");
+/*Cookies*/
+var CookieConsentStatus;
+(function (CookieConsentStatus) {
+    CookieConsentStatus["granted"] = "GRANTED";
+    CookieConsentStatus["denied"] = "DENIED";
+    CookieConsentStatus["undefined"] = "UNDEFINED";
+})(CookieConsentStatus || (CookieConsentStatus = {}));
+function getCookieConsent() {
+}

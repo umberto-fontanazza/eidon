@@ -170,7 +170,7 @@ cookieInit(cookieSnippetPath, "cookie-bar")
 
 
 /*Cookies*/
-enum CookieConsentStatus {
+/* enum CookieConsentStatus {
     granted = "GRANTED",
     denied = "DENIED",
     undefined = "UNDEFINED"
@@ -179,4 +179,4 @@ enum CookieConsentStatus {
 
 function getCookieConsent(): boolean {
     
-}
+} */

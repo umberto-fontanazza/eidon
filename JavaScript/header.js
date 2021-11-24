@@ -4,6 +4,7 @@ var mainHeader = document.querySelector("#main-nav-header");
 var navLinks = document.querySelectorAll("#main-nav-header nav a");
 var lastScrollTop = 0;
 var colorAccent = getComputedStyle(document.documentElement).getPropertyValue('--color-accent');
+var cookieSnippetPath = "/Snippets/cookie-bar.html";
 window.addEventListener('scroll', function () {
     var header = document.querySelector("header");
     if (header == null)
@@ -134,3 +135,25 @@ function readingBarUpdate(barSelector) {
 window.addEventListener("scroll", function (evt) {
     readingBarUpdate("header .progress-bar");
 });
+/**
+ * This function fetches the cookie-bar snippet
+ * located at the path specified by the first param
+ * and appends the node to the document.body
+ * @param {string} cookieSnippetPath Location of the html snippet
+ * @param {string} cookieBarId CSS id given to the outer div containing the cookie bar
+ */
+function cookieInit(cookieSnippetPath, cookieBarId) {
+    var fetchedHTML;
+    var dummyDiv = document.createElement("div");
+    fetch(cookieSnippetPath)
+        .then(function (response) { return response.text(); })
+        .then(function (data) {
+        fetchedHTML = data;
+        dummyDiv.innerHTML = fetchedHTML;
+        var cookieContainer = dummyDiv.querySelector("#" + cookieBarId);
+        if (cookieContainer == null)
+            throw "Cookie container is null";
+        document.body.appendChild(cookieContainer);
+    });
+}
+cookieInit(cookieSnippetPath, "cookie-bar");

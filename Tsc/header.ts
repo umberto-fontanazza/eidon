@@ -3,6 +3,7 @@ const mainHeader = document.querySelector("#main-nav-header");
 const navLinks = document.querySelectorAll("#main-nav-header nav a");
 let lastScrollTop: number = 0;
 let colorAccent = getComputedStyle(document.documentElement).getPropertyValue('--color-accent')
+let cookieSnippetPath = "/Snippets/cookie-bar.html"
 
 
 window.addEventListener('scroll', function (): void {
@@ -143,4 +144,26 @@ window.addEventListener("scroll",evt => {
     readingBarUpdate("header .progress-bar");
 })
 
+/**
+ * This function fetches the cookie-bar snippet
+ * located at the path specified by the first param
+ * and appends the node to the document.body
+ * @param {string} cookieSnippetPath Location of the html snippet
+ * @param {string} cookieBarId CSS id given to the outer div containing the cookie bar
+ */
+function cookieInit(cookieSnippetPath: string, cookieBarId: string): void {
+    let fetchedHTML: string;
+    let dummyDiv = document.createElement("div");
 
+    fetch(cookieSnippetPath)
+        .then((response: Response) => response.text())
+        .then((data) => {
+            fetchedHTML = data
+            dummyDiv.innerHTML = fetchedHTML!
+            let cookieContainer = dummyDiv.querySelector("#"+cookieBarId);
+            if(cookieContainer == null)
+                throw "Cookie container is null"
+            document.body.appendChild(cookieContainer)
+        })
+}
+cookieInit(cookieSnippetPath, "cookie-bar");

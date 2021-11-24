@@ -17,6 +17,7 @@ html {
     --color-rgbval-dark: 0,0,0;
     --color-dark: rgb(var(--color-rgbval-dark));
     --transform-scale-default: scale(1.02);
+    --backdrop-filter-default: blur(10px);
 
     /* Animations */
     --animation-duration-default: 1.2s;
@@ -90,6 +91,11 @@ button {
     color: var(--color-bright);
     background-color: transparent;
     cursor: pointer;
+    transition: var(--transition-duration-default) ease;
+
+    &:hover {
+        transform: var(--transform-scale-default);
+    }
 }
 
 .image-container {
@@ -157,13 +163,48 @@ section {
 
 #cookie-bar {
     width: 100%;
-    height: 25vh;
-    background-color: rgba( var(--color-rgbval-dark) ,0.8);
+    height: 40vh;
+    background-color: rgba( var(--color-rgbval-dark) ,0.7);
     border-top: 1px solid var(--color-accent);
     position: fixed;
     left: 0;
     bottom: 0;
     z-index: 100000;
+    padding: 0 var(--padding-section-horizontal);
+    backdrop-filter: var(--backdrop-filter-default);
+    text-align: center;
+    box-sizing: border-box;
+    transition: var(--transition-duration-default) ease;
+    transform: translateY(100%);
 
-    display: none; //TO-DO: to be modified
+    &.active {
+        transform: translateY(0);
+    }
+
+    h4 {
+        margin-bottom: 0;
+    }
+
+    a {
+        color: var(--color-accent);
+    }
+
+    button {
+        width: 100%;
+        &:nth-of-type(1) {
+            margin-right: 10px;
+        }
+        &:nth-of-type(2) {
+            border-color: var(--color-bright);
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        background-color: rgba( var(--color-rgbval-dark) ,0.5);
+        height: 25vh;
+
+        button {
+            width: auto;
+        }
+    }
 }

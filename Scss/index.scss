@@ -13,6 +13,7 @@ $transition-delay-short: 0.2s;
         position: absolute;
         background-image: url("./Images/greg-goya-mountain.jpeg");
         background-size: cover;
+        background-attachment: fixed;
         z-index: 1;
         top: 0;
         left: 0;

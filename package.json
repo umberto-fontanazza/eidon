@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch ./Scss/styles.scss ./styles.css --style compressed"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/umberto-fontanazza/eidon.git"
   },
-  "author": "",
+  "keywords": [],
+  "author": "Umberto Fontanazza",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/umberto-fontanazza/eidon/issues"

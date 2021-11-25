@@ -165,18 +165,87 @@ function cookieInit(cookieSnippetPath: string, cookieBarId: string): void {
                 throw "Cookie container is null"
             document.body.appendChild(cookieContainer)
         })
+        .then(evt => {
+            cookieBar("#"+cookieBarId)
+        })
 }
-cookieInit(cookieSnippetPath, "cookie-bar")
+
+/**
+ * This function takes a key, value pair and a
+ * number of days and created a new cookie
+ * @param {string} cname cookie key
+ * @param {string} cvalue cookie value
+ * @param {number} exdays cookie validity time (in days)
+ */
+function setCookie(cname: string, cvalue: string, exdays: number): void {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+/**
+ * The function takes in a cookie key
+ * and returns the cookie value or an empty string
+ * @param {string} cname the cookie key
+ * @returns {string} the cookie value or an empty string
+ */
+function getCookie(cname: string): string {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 
 
 /*Cookies*/
-/* enum CookieConsentStatus {
+enum CookieConsentStatus {
     granted = "GRANTED",
-    denied = "DENIED",
-    undefined = "UNDEFINED"
+    denied = "DENIED"
 }
 
-
+/**
+ * This utility functions tells if cookie consent has been granted
+ * @returns {boolean} the consent status of cookie
+ */
 function getCookieConsent(): boolean {
-    
-} */
+    if(getCookie("cookieConsent") == CookieConsentStatus.granted)
+        return true
+    return false
+}
+
+/**
+ * This utility function updates
+ * the cookie consent status
+ * @param {CookieConsentStatus} status possible values are granted or denied
+ */
+function setCookieConsent(status: CookieConsentStatus): void {
+    setCookie("cookieConsent", status, 365)
+}
+
+function cookieBar(selector: string){
+    if(getCookieConsent())
+        return
+    let cookieBar = document.querySelector<HTMLElement>(selector)
+    if(cookieBar == null)
+        throw "Couldn't find HTMLElement cookie bar"
+    cookieBar.classList.add("active")
+    let acceptButton = cookieBar.querySelector("#accept-all")
+    if(acceptButton == null)
+        throw "Couldn't find accept cookies button HTMLElement"
+    acceptButton.addEventListener("click",evt => {
+        setCookieConsent(CookieConsentStatus.granted)
+        cookieBar?.classList.remove("active")
+    })
+}
+
+cookieInit(cookieSnippetPath, "cookie-bar")

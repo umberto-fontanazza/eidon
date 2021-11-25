@@ -25,6 +25,7 @@ window.addEventListener('scroll', function (): void {
 function mobileMenuToggle(): void {
     if (mainHeader == null) return;
     mainHeader.classList.toggle("mobile-nav-active");
+    document.querySelector("#mobile-menu-icon")?.classList.toggle("active")
     toggleBodyScroll();
 }
 

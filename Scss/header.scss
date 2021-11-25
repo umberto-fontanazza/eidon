@@ -36,11 +36,61 @@ header {
         }
     }
 
-    #mobile-menu-icon {
+/*     #mobile-menu-icon {
         color: var(--color-dark);
         padding: calc(var(--padding-section-horizontal)/2);
         margin-right: calc(var(--padding-section-horizontal)/2);
         font-size: 1.7em;
+    } */
+
+    #mobile-menu-icon {
+        --icon-menu-size: 30px;
+        box-sizing: border-box;
+        height: var(--icon-menu-size);
+        width: var(--icon-menu-size);
+        margin-right: var(--padding-section-horizontal);
+
+        .bar {
+            --icon-menu-bar-height: 3px;
+            background-color: var(--color-dark);
+            height: var(--icon-menu-bar-height);
+            width: 100%;
+            transition: var(--transition-duration-default) ease;
+
+
+            &:not(:last-of-type) {
+                margin-bottom: calc((var(--icon-menu-size) - var(--icon-menu-bar-height)*3) /2 );
+            }
+
+            &:first-of-type {
+                transform-origin: bottom left;
+                transition-delay: var(--transition-duration-default);
+            }
+
+            &:nth-of-type(3) {
+                transform-origin: top left;
+                transition-delay: var(--transition-duration-default);
+            }
+        }
+
+
+        &.active {
+            .bar {
+                &:first-of-type {
+                    width: calc(100% * (1.22));
+                    transform: rotate(45deg);
+                }
+
+                &:nth-of-type(2) {
+                    transform: translateX(200%);
+                }
+
+                &:nth-of-type(3) {
+                    width: calc(100% * (1.22));
+                    transform: rotate(-45deg);
+                }
+            }
+        }
     }
 
     nav {

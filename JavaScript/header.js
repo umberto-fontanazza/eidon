@@ -21,9 +21,11 @@ window.addEventListener('scroll', function () {
  * a full screen menu by adding a css class
  */
 function mobileMenuToggle() {
+    var _a;
     if (mainHeader == null)
         return;
     mainHeader.classList.toggle("mobile-nav-active");
+    (_a = document.querySelector("#mobile-menu-icon")) === null || _a === void 0 ? void 0 : _a.classList.toggle("active");
     toggleBodyScroll();
 }
 function mobileMenuClose() {

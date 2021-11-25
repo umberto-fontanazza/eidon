@@ -171,6 +171,7 @@ section {
     bottom: 0;
     z-index: 100000;
     padding: 0 var(--padding-section-horizontal);
+    -webkit-backdrop-filter: var(--backdrop-filter-default);
     backdrop-filter: var(--backdrop-filter-default);
     text-align: center;
     box-sizing: border-box;

@@ -20,8 +20,10 @@
             xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#glyph-1-0" xlink:type="simple" xlink:actuate="onLoad" xlink:show="embed"/>
     </g>
     <style>
-        .first-letter {
-           fill: rgb(255,255,255);
+        @media (prefers-color-scheme: dark) {
+            .first-letter {
+               fill: rgb(255,255,255);
+            }
         }
     </style>
 </svg>
